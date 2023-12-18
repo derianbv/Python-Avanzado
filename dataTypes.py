@@ -18,3 +18,28 @@ print(callable(lambda x: x+1))
 #True
 
 
+
+
+
+##################### Repetición y concatenación #####################################
+
+lista1 = [1,2,3]
+lista2 = [4,5,6]
+#1. Concatenación: 
+    #solo se puede hacer entre el mismo tipo de datos!!!!!: 
+
+listaConcatenada = lista1 + lista2 #une las listas
+#[1,2,3,4,5,6]
+
+#2. Repetición. 
+    #Solo se puede hacer multiplicando con positivos, no con números con decimales, si se hace por un número negativo, el arreglo saldrá vacío: 
+
+peque = [1,2]
+grande = peque*4
+print(grande)
+#[1, 2, 1, 2, 1, 2, 1, 2]
+
+vacio = peque * -1
+print(vacio)
+#[]
+
