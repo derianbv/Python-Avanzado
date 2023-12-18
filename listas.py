@@ -106,4 +106,11 @@ lista4.remove('a')
 
 
 #9. sort(): 
+#Funciona con Timsort internamente
+#Ordena ascendentemente una lista en python 
+# recibe dos parámetros sort(key: función con la que ordenar, reverse = true or false: pasarlo a orden ascendente
+#Key puede ir con: 
+    # key = lambda
+    # key = f(x)
+    # key = len 
 

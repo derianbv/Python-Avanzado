@@ -60,3 +60,8 @@ print(list(map((lambda x: x+1), lista)))
 #imprime: [2, 3, 5, 6]
 
 
+
+
+######################### Sorted() ########################################
+#sorted(iterable)
+#sorted(key=callable, reverse=True)
