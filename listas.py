@@ -6,8 +6,17 @@
 # 3. Es mutable. 
 
 
-lista:list = []
+lista1:list = [1,2,3,4]
 
 #4. Se pueden meter todo tipo de datos a la lista: 
  
-lista2 = []
+lista2 = [True, False, lista1, 32, 43.2, 'Hola']
+
+#5. Se puede acceder a los elementos desde el final de la lista con los números negativos: 
+# en este caso ya no iniciarían en -0 sino en -1
+
+print(lista2[-1])
+#retorna 'Hola'
+
+
+
