@@ -1,5 +1,6 @@
 ############# FUNCIONES LAMBDA ##########################
 
+#Solo son de una linea
 #Son en pocas palabras funciones concisas, que no necesitan nombre: 
 #sirve para entre otras cosas, hacer higher order functions (funciones que reciven y retornan otra función)
 
@@ -16,6 +17,16 @@ primerLambda(4)
 print((lambda var : var * 4 )(5))
 
 # (lambda var : var * 4 )(5) == miFuncion(5)
+
+
+
+
+
+
+### High oder functions ### 
+# reciben y retornan fucniones, ejemplo map() o filter() o reduce(s)
+ 
+    
 
 
 
@@ -47,3 +58,5 @@ print(list(map(sumarUno,lista)))
 
 print(list(map((lambda x: x+1), lista)))
 #imprime: [2, 3, 5, 6]
+
+
