@@ -1,10 +1,11 @@
 ##################################### Dunder or magic methods ##############################################
 ##################### Double Underscore methods __f(x)__ ######################################
 #son como los constructores de Java. 
-
+import math
 
 #Definen el comportamiento de las cuestiones básicas de simbología de una clase. 
-#Ejemplo, los aritméticos: __add__ cambia el comportamiento del símbolo '+', __mul__ de '*': 
+#Ejemplo, los aritméticos: __add__ cambia el comportamiento del símbolo '+', __mul__ de '*', en general el comportamiento de las
+#funciones de Math, ejemplo sum(vector1, vector2): 
 
 #Ejemplo un espacio vectorial: 
 
@@ -35,4 +36,9 @@ print(v3)
 #print 8 porque 2^3 = 8 :). 
 
 
+#se pueden también definir el comportamineto de otras cosas del lenguaje:
+#__mul__ para la multiplicación, __pow__ potenciación, __and__ para el operador &, __eq__ para ==, __ne__ para != etc. 
+ 
+#__init__ método constructor de un objeto. 
 
+#Se puede 
