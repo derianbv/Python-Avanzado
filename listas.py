@@ -1,6 +1,62 @@
 ##################### Listas ##################################################
 ################################################################################
 
+
+############ En memoria ####################################
+#pasos en memoria para creación de lista: 
+
+
+#0.  pongamos el ejemplo de la creación de esta lista en python: lista = [1,2,3,4]
+
+#1. se crean los espacios de memoria para 1, para 2, para 3 y para 4. 
+    # cada espacio es de este tipo: [type | value | id ], id es la dirección en memoria ram del objeto y es lo que retornaria la el método id(). 
+
+
+lista = [1,2,3,4]
+for i in lista:
+    print(f"[{type(i)} | {i} | {id(i)}]")
+
+#en consola se imprime: 
+    
+#[<class 'int'> | 1 | 140732167756352]
+#[<class 'int'> | 2 | 140732167756384]
+#[<class 'int'> | 3 | 140732167756416]
+#[<class 'int'> | 4 | 140732167756448]
+
+
+#2. Después se crea un objeto tipo lista en la memoria y sus valores internos son solo referencias (o punteros) a los números de la lista usando su id()
+
+
+print(f"[{type(lista)} | {lista} | {id(lista)} | {[id(i) for i in lista]}]")
+for i in lista:
+    print(f"[{type(i)} | {i} | {id(i)}]")
+
+
+
+#[<class 'list'> | [1, 2, 3, 4] | 140732167756352 | id de elementos internos: [140732167756384, 140732167756416, 140732167756448, 140732167756480]]
+#[<class 'int'> | 1 | 140732167756384]
+#[<class 'int'> | 2 | 140732167756416]
+#[<class 'int'> | 3 | 140732167756448]
+#[<class 'int'> | 4 | 140732167756480]
+
+#y estos números internos coinciden con las id de cada número.
+    
+
+
+
+#3. por último se crea el espacio de memoria para la variable "lista" de este modo:
+# [type: variable:list | 140732167756352 | 1407321677564342 ] 
+# valor de la variable está la referencia al id de la lista en memoria. 
+
+################################################################
+
+
+
+
+
+
+# Características de las listas: #####################################3
+
 # 1. Listas: arreglo dinámico, se implementan por medio de arreglos estáticos que al llenarse se duplica su tamaño.    
 # 2. Es de la clase "Lista"
 # 3. Es mutable. 
@@ -33,9 +89,7 @@ print(a)
 
 lista3 = [*lista1, *lista2]
 print(lista3)
-#en este caso los ementos de la lista tres van a hacer los que esten por dentro de la lista1 y lista2.
-
-
+#en este caso los elementos de la lista tres van a hacer los que esten por dentro de la lista1 y lista2.
 
 
 
@@ -126,4 +180,9 @@ lista4.remove('a')
 
 
 
-#12. 
+#12. .copy() crea una copia en la memoria de una lista
+copiaLista = lista4.copy()
+print(f"Espacio en memoria de copiaLista: {id(copiaLista)} != {id(lista4)} :espacio en mem de lista4")
+#print = Espacio en memoria de copiaLista: 1333750318464 != 1333750318528 :espacio en mem de lista4
+#mas info de id en el archivo funciones y metodos en la parte de id()
+
