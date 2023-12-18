@@ -114,3 +114,16 @@ lista4.remove('a')
     # key = f(x)
     # key = len 
 
+#Info más detallada en el archivo funciones.py en la parte de sorted()
+
+
+
+#10. reverse() revierte la lista.
+
+
+
+#11. count(x) cuenta la cantidad de veces que se encuentra x en la lista. 
+
+
+
+#12. 
