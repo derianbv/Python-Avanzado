@@ -180,9 +180,42 @@ lista4.remove('a')
 
 
 
-#12. .copy() crea una copia en la memoria de una lista
+#12. .copy() crea una copia en la memoria de una lista (Shallow Copy)
+
+#Shallow quiere decir que copia y CREA elementos nuevos cuando solo tienen una capa de profundidad, eje: 1,True, "mamá", 32. 
+
 copiaLista = lista4.copy()
 print(f"Espacio en memoria de copiaLista: {id(copiaLista)} != {id(lista4)} :espacio en mem de lista4")
-#print = Espacio en memoria de copiaLista: 1333750318464 != 1333750318528 :espacio en mem de lista4
+#print = Espacio en memoria de copiaLista: 1333750318464 != 1333750318528 :espacio en memoria de lista4
 #mas info de id en el archivo funciones y metodos en la parte de id()
 
+#Sin embargo, al realizar copia a un arreglo que tenga más capas de profundidad, es decir que posea objetos que por dentro posean objetos, estos objetos internos no se CREAN nuevos en memoria sino se realiza una referencia en el segundo arreglo a los elementos del arreglo copiado. Ejemplo: 
+
+dict = {'nombre':'Lucia'}
+lista3D = [1,2,3,[4,[5,6]], dict] #el elemento lista2D[3] es una lista también que tiene una lista interna. 
+copia3D = lista3D.copy()
+
+print(f'lista3D: {lista3D}, id: {id(lista3D)} || copia3D: {copia3D}, id: {id(copia3D)}')
+#print = lista2D: [1, 2, 3, [4, 5]], id: 2659303676224 || copia2D: [1, 2, 3, [4, 5]], id: 2659303676288
+#tienen diferente id o sea espacio en memoria, pero veamos el id del elemento en la posición tres de ambas listas: 
+
+print(f'{id(lista3D[4])} == {id(copia3D[4])}')
+# 1362830542720 == 1362830542720 es el mismo, entonces al realizar cambios en esa lista interna en la copia se reflejan en la lista inicial: 
+
+copia3D[3][1].append("CASPER")
+print(lista3D)
+#[1, 2, 3, [4, [5, 6, 'CASPER']], {'nombre': 'Lucia'}] se ve el cambio de copia3D en la original lista3D. 
+#Esto mismo sucede con estructuras que posean datos internos como diccionarios, listas, tuplas, etc- 
+#para evitar eso se debe realizar una DEEP copy con el módulo copy (deepcopy):
+
+import copy
+
+DeepLista3D = copy.deepcopy(lista3D)
+#copia todos los niveles de profundidad: una lista dentro de una lista, dentro de una lista ... etc.
+#ahora sí esta copia no modifica a la lista original. 
+
+DeepLista3D[3][1].append("SOLO APAREZCO EN LA COPIA")
+
+print(f'{lista3D} \n {DeepLista3D}')
+# [1, 2, 3, [4, [5, 6, 'CASPER']], {'nombre': 'Lucia'}] 
+# [1, 2, 3, [4, [5, 6, 'CASPER', 'SOLO APAREZCO EN LA COPIA']], {'nombre': 'Lucia'}] 

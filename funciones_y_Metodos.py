@@ -148,7 +148,17 @@ sorted(students, key=newgrades.__getitem__)
 
 #recibe todo tipo de objeto. 
 
-#Uso: sirve para COMPARARA, se mira si dos objetos diferentes ocupan el mismo espacio de memoria.
+#Uso: sirve para COMPARAR, se mira si dos objetos diferentes ocupan el mismo espacio de memoria.
+#Si sí, los cambios que se hagan a las referencias de esos espacios se aplicarán a todas las referencias (porque es el mismo espacio)
 #Ejemplo: 
-a = [1,2,3] #a
-b = a
+
+a = [1,2,3] # acá se crea una lista referenciada por a
+b = a # Se crea otra referencia a a, llamada b. 
+print(f"{id(a)} == {id(b)}")
+#1770928659904 == 1770928659904, mismo espacio en memoria
+
+#reflejar cambios por medio de b. 
+listaa = [98,76,44]
+b.append(listaa)
+print(a)
+#[1, 2, 3, [98, 76, 44]] se evidencia que cambió el espacio en memoria
