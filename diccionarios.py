@@ -55,6 +55,15 @@ print(dic['casa'])
 
 
 
+########## Agregar al diccionario ###########:
+#Escribimos una llave que no tengamos en el diccionario y le asinamos un valor: 
+
+
+dic2 = {'num1':2,
+        'edad':45}
+dic['miLista'] = [4,4,4,4]
+print(dic2)
+#{'num1': 2, 'edad': 45}
 
 
 
@@ -62,9 +71,17 @@ print(dic['casa'])
 
 
 
-#########333 Los diccionarios están ordenados POR ORDEN de inserción: 
 
+
+############################ ORDEN #3#############################:
+
+
+#Los diccionarios están ordenados POR ORDEN de inserción: 
 # NOOO significa que el primer elemento agregado al dicci tenga indicie [0]
+#Es imposible ordenar un diccionario por otro tipo de orden como por tamaño del número o largo del string, para hacer eso hay que convertirlo a otro tipo de dato.
+
+
+
 # Crear un diccionario con eventos en una línea de tiempo
 eventos = {'Evento 1': '2001', 'Evento 2': '2002', 'Evento 3': '2003'}
 
@@ -75,3 +92,24 @@ for evento, año in eventos.items():
 #Evento 1 ocurrió en 2001
 #Evento 2 ocurrió en 2002
 #Evento 3 ocurrió en 2003
+    
+print(eventos)
+#{'Evento 1': '2001', 'Evento 2': '2002', 'Evento 3': '2003'}
+print(eventos)
+#{'Evento 1': '2001', 'Evento 2': '2002', 'Evento 3': '2003'}   
+#no importa cuantas veces imprimamos, los eventos aparecen en orden de agregados. 
+
+
+
+##################################### Métodos ##################################
+
+#1. clear(): limpia los elementos del diccionario. 
+
+
+#2. copy(): copia el arreglo superficialmente (shallow), los elementos que posean capas de profundidad (Ej: listas (profundidad 2), o listas dentro de listas (profundidad 3) solo serán apuntadores al diccionario original por lo tanto realizar cambios a estos datos en la copia también modificará a los datos el diccionario original.
+
+    #Hacer deep copy (copiar el diccionario y también los datos con más capas de profundidad para que sean independientes por diccionario): 
+
+import copy 
+copiaDeep = copy.deepcopy(dic2)
+
