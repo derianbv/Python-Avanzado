@@ -7,7 +7,7 @@
 
     #Se maneja hash por su eficiencia, ya que el diccionario NO tiene indexación, solo se agrega una llave y la manera más rapida de llegar a él en el conjunto de datos del diccionario es con el número que genera la hash table f(x).
 
-        #La complejidad de la búsqueda, inserción y eliminación es O(1) por la función hash que consigue de una la ubicación del elemento.
+        #La complejidad de la búsqueda, insercción y eliminación es O(1) por la función hash que consigue de una la ubicación del elemento.
 
             #En el peor de los casos dos llaves generarán el mismo numero hash y se crean entonces las coliciones, en el peor de los casos la complejidad será 0(n) porque debe iterar sobre la lista de items en esa posición de la hash.
 
@@ -40,7 +40,7 @@ dic = {
 
 
 ############# Acceso al Diccionario ############: 
-#Cuando accedo a la llave en verdad estoy accedindo al valor por medio de su indice, pero en este caso el indice es la llave (porque no hay indexación con números), Lista acceso: lista[0] = 'jose', dicc['nombre'] = jose.  
+#Cuando accedo a la llave en verdad estoy accedindo al valor por medio de su indice, pero en este caso el indice es la llave (porque no hay indexación con números ya que el diccionario no es secuencial), Lista acceso: lista[0] = 'jose', dicc['nombre'] = jose.  
 
 #Sintaxis: diccionario[llave]
 
@@ -53,3 +53,25 @@ dic['casa'] = 'Calle 146'
 print(dic['casa'])
 #Calle 146
 
+
+
+
+
+
+
+
+
+
+#########333 Los diccionarios están ordenados POR ORDEN de inserción: 
+
+# NOOO significa que el primer elemento agregado al dicci tenga indicie [0]
+# Crear un diccionario con eventos en una línea de tiempo
+eventos = {'Evento 1': '2001', 'Evento 2': '2002', 'Evento 3': '2003'}
+
+# Imprimir los eventos en el orden en que ocurrieron
+for evento, año in eventos.items():
+    print(f'{evento} ocurrió en {año}')
+
+#Evento 1 ocurrió en 2001
+#Evento 2 ocurrió en 2002
+#Evento 3 ocurrió en 2003
