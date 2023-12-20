@@ -173,4 +173,43 @@ print(eventos.items())
 
 
 
-#10. 
+#10. setdefault(llave, d): este método va a buscar en el diccionario la llave que le pasemos y retronará su valor si lo encuentra. Si la llave no se encuentra en el diccionario la creará y le pondrá el valor que hayamos definido para d, si d no está definido entonces le pondrá None.
+
+
+
+numeros = {1:'uno', 2:'dos', 3:'tres'}
+print(numeros.setdefault(2)) #busco una llave que ya está y me retorna su valor.
+#print() = dos
+
+print(numeros.setdefault(4,'cuatro'))
+#cuatro
+print(numeros)
+#{1: 'uno', 2: 'dos', 3: 'tres', 4: 'cuatro'}   actualizó el dict
+
+
+
+
+
+#11. update(otroIterable ordenado (llave,valor) o dict): si hay llaves repetidas en ambos diccionarios, el dccionario actualizando se quedará con las llaves del segundo diccionario y no con su propia llave repetida. 
+
+dict1 = {1:'uno',2:'dos'}
+dict2 = {'beso':'kiss', 'amor':'love'}
+
+dict2.update(dict1)
+print(dict2)
+#{'beso': 'kiss', 'amor': 'love', 1: 'uno', 2: 'dos'}
+
+
+#Pueden ser diferentes datos para extender pero que esten ordenados en PARES:
+
+listaPair = [['casa','house'],['bebé','baby']] #con listas (se puede con tuplas)
+dict1.update(listaPair)
+print(dict1) 
+#{1: 'uno', 2: 'dos', 'casa': 'house', 'bebé': 'baby'}
+
+
+
+
+#################### iterar #############################
+#Puedo iterar con un FOR EACH por cada valor, llave o item llamando al objeto vista del diccionario, cuando lo hago por item puedo asignar dos variables de iteración:
+
