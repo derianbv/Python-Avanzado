@@ -99,7 +99,8 @@ print(dos)
 #[2, 3, 4, 5] las ultimas dos variables (tres, cuatro) = 6,7 y uno = 1, por lo tanto imprime ls valores restantes
 
 *uno, dos, tres, cuatro = [1,2,3,4,5,6,7]
-print(dos)
+print(uno)
+#[1,2,3,4]
 
 
 

@@ -76,7 +76,4 @@ print(tuplaRep*4)
 
 
 
-string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
-non_null = string1 and string2 and string3
-print(non_null)
 

@@ -19,7 +19,27 @@ print(tomoNumTrue)
 
 #En este caso, toma al cero como falso y números enteros(sin el 0) como verdaderos.
 
-#tomará como falso o verdadero los siguientes valores: 
+
+#Si todos son falsos entonces tomará el último: 
+
+
+
+fal1,fal2,fal3,fal4 = "","","",[]
+var = fal1 or fal2 or fal3 or fal4
+print(var)
+#[]
+
+
+#Asignación con var = num1 and num2 and num3... 
+#Es lo mismo que con or pero retornará el primero valor FALSO que encuentre, si no encuentra niguno falso entonces retornará el último.
+
+
+
+
+
+
+
+#Python tomará como falso o verdadero los siguientes valores: 
 ######## TRUTHY o FALSY ##############3
 #1. Truthy (valores que toma como verdadero aparte del True): 
     #Cualquier cadena, lista, conjunto, diccionario, tupla o rango que no esté vacío.
@@ -31,6 +51,3 @@ print(tomoNumTrue)
     #None
 
 
-*uno, dos, tres, cuatro = [1,2,3,4,5,6,7]
-print('________________________')
-print(uno)
