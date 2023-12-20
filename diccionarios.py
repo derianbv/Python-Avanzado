@@ -113,3 +113,64 @@ print(eventos)
 import copy 
 copiaDeep = copy.deepcopy(dic2)
 
+
+
+
+#3. dict.fromkeys(seq, value ):   
+    #seq: puede ser cualquier tipo de dato iterable: 
+            #1. Listas.
+            #2. Tuplas.
+            #3. Strings.
+            #4. Diccionarios.
+            #5. Sets.
+            #6. Archivos (se abre un archivo en python, se puede iterar a traves de sus líneas, txt, csv, json)
+    #value: puede ser cualquier objeto de python, si no se especifica este valor por defecto se pondrá None.
+
+# el método fromkeys(iterable,valorDefecto) agarra un iterable o secuencia de objetos que posea internamente SOLO objetos invariables (tuplas, numeros, strings o frozenSets ), si posee algo variable interno como una lista se dispará un error: 
+#mi_diccionario = dict.fromkeys([[1,2], 'dos', 'tres'], 0) ERROR.
+#Luego el valor por defecto puede ser cualquier objeto y se asgnará a todas las llaves del diccionario que estemos creando: 
+
+llaves = ['uno',2,'tres','4']
+
+nuevoDict = dict.fromkeys(llaves,'vaLoRrR')
+print(nuevoDict)
+#{'uno': 'vaLoRrR', 2: 'vaLoRrR', 'tres': 'vaLoRrR', '4': 'vaLoRrR'}
+
+
+
+#4. get(X, valorSiNoEstáX):
+    #sirve para buscar el valor de la llave en un diccionario, si no está esa llave devuelve por defecto None, si se define valorSiNoEstáX entonces al no encontrar el dato retronará valorSiNoEstáX:
+
+#Ejemplo: 
+
+print(nuevoDict.get('uno'))
+#vaLoRrR
+print(nuevoDict.get(5))
+#None
+print(nuevoDict.get(5,'no está en el diccionario')) #definiendo el segundo parámetro
+#no está en el diccionario
+
+
+
+#5. items(): devuelve llave:valor del diccionario: 
+print(eventos.items())
+#dict_items([('Evento 1', '2001'), ('Evento 2', '2002'), ('Evento 3', '2003')]), son referencias a los items de la lista para ser modificados(objeto vista)
+
+
+#6. keys(): devuelve un objeto vista de todas las keys. 
+
+
+#7. values(): devuekve un objeto vista de todos los valores de las llaves.
+
+
+
+#8. pop(llave):  quita el elemento del diccionario y retorna su valor, si no lo encuentra dispara un error.
+    #pop(llave,d): d = valor que podemos poner para que se imprima si no encuentra la llave. 
+    
+
+
+#9. popitem() (no toma parámetros): elimina y retorna el último item ingresado, retorna clave y valor, si el dict está vacio dispara un error. 
+
+
+
+#10. 
