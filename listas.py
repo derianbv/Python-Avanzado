@@ -80,9 +80,28 @@ print(lista2[-1])
 
 #6.1 Manera 1: asignando una cantidad de variables igual a la cantidad de elementos de la lista: 
 
-a,b,c,d,e,f = lista2
+a,b,*c = lista2 #si tiene asterisco va a agarrar lo que sobre
 #esto la descompone y asigna en orden los elementos de la lista a las variables. 
-print(a)
+print(c)
+#SOLO SE PUEDE TENER UNA VARIABLE CON ASTERISCO
+
+
+
+
+#si el "*" se pone en la variable del medio, ésta tomará los valores del medio, en el ejemplo uno y tres tomarán los valores de las puntas:
+uno, *dos, tres = [1,2,3,4,5,6,7]
+print(dos)
+#[2, 3, 4, 5, 6]
+
+
+uno, *dos, tres, cuatro = [1,2,3,4,5,6,7]
+print(dos)
+#[2, 3, 4, 5] las ultimas dos variables (tres, cuatro) = 6,7 y uno = 1, por lo tanto imprime ls valores restantes
+
+*uno, dos, tres, cuatro = [1,2,3,4,5,6,7]
+print(dos)
+
+
 
 #6.2 Manera 2: con el operador "*" si se agrega antes de una lista va a desgrupar a los elementos
 #Ejemplos: 
@@ -226,8 +245,6 @@ print(f'{lista3D} \n {DeepLista3D}')
 
 
 
-
-
 ##################### Repetición y concatenación #####################################
 
 
@@ -254,3 +271,60 @@ print(vacio)
 
 ############################# Slicing #############################################
 #Ver el archivo de slicing.py 
+
+
+
+
+########################### list-comprehention #####################################
+
+#Sirven para crear listas con base a otras sin tener que usar append(), por lo tanto se realiza más rápido.
+#también se pueden crear listas con ranges sin necesidad de otra lista.
+
+
+#Sintaxis: entre parentesis porque es una lista: [ elemento for i in lista1 condición(opcional) ]
+#ejemplo: 
+
+lista1 = [23,4,54,78,21,3,4,0,95]
+
+
+#sitaxis básica para copiar de uno a otro:
+listaMenores = [i for i in lista1]
+print(listaMenores)
+#[23, 4, 54, 78, 21, 3, 4, 0, 95]
+
+
+
+#voy a crear una lista con numeros pequeños basada en lista1: 
+listaMenores = [i for i in lista1 if i < 10]    
+print(listaMenores)
+#[4, 3, 4, 0]
+
+#puedo también modificar la i: 
+
+modi = [i**2 for i in lista1 if i < 10]
+print(modi)
+#[16, 9, 16, 0]
+
+
+
+
+#List con range, numeros del 1 al 14:
+
+numeros = [i+1 for i in range(14)]
+print(numeros)
+#[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+
+#se pueden anidar for:
+#en este ejemplo se hace una rama por cada x hasta 3 ramas, y luego con cada rama salen tres para 3. 
+#si el par de numeros sumados es par se incluye en la lista de pares.
+pares = [(x,y) for x in range(3) for y in range(3) if (x+y)%2==0]
+print(pares)
+#[(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)]
+
+
+
+#ejemplo creación de matriz:
+
+matriz = [[i+1,i+2,i+3] for i in range(3)]
+print(matriz)

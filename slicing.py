@@ -73,3 +73,9 @@ print(lista2D[3][::-2])
 copiaSuperficial = lista2D[:] #se copian los datos de una dimensión
 
 segundaRef = lista2D #esto no es una copia sino poner un segundo nombre a la misma lista en memoria.
+
+
+
+
+
+
