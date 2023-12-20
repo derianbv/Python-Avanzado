@@ -37,10 +37,11 @@ print(var)
 
 
 
-
-
 #Python tomará como falso o verdadero los siguientes valores: 
-######## TRUTHY o FALSY ##############3
+
+
+########################################### TRUTHY o FALSY #############################################
+
 #1. Truthy (valores que toma como verdadero aparte del True): 
     #Cualquier cadena, lista, conjunto, diccionario, tupla o rango que no esté vacío.
     #Cualquier número distinto de cero.
@@ -49,5 +50,7 @@ print(var)
     #Cualquier cadena, lista, conjunto, diccionario, tupla o rango que esté vacío.
     #El 0. 
     #None
+
+
 
 

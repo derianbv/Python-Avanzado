@@ -43,3 +43,15 @@ vacio = peque * -1
 print(vacio)
 #[]
 
+
+
+
+
+
+
+############################# Datos Inmutables ##########################################
+#1.  Números de cualquier tipo. 
+# (cambiarlo es como decir que voy a cambiar (la naturaleza de ese color), solo terminaría de cambiar el color a otro pero no estaría cambiando el color original. 
+#2. String
+#3. Tuplas. 
+#. Frozen Sets
