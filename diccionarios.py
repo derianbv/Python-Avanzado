@@ -12,12 +12,14 @@
             #En el peor de los casos dos llaves generarán el mismo numero hash y se crean entonces las coliciones, en el peor de los casos la complejidad será 0(n) porque debe iterar sobre la lista de items en esa posición de la hash.
 
 
+#Los diccionarios SON MUTABLES.
+
 
 #Sintaxis:
 
 #miDic = {clave : valor, clave2, valor2}
     
-    #clave: debe ser un valor INMUTABLE de python (tuplas, números, strings, frozenSets) debido a que al aplicar la función hash si el valor cambiara ya no se podría acceder a su indice dentro de la tabla. Se necesita que sea siempre el mismo.  NO SE PUDE REPETIR LA LLAVE POR LO MISMO.
+    #clave: debe ser un valor INMUTABLE de python (tuplas, números, strings, frozenSets) debido a que al aplicar la función hash si el valor cambiara ya no se podría acceder a su indice dentro de la tabla. Se necesita que sea siempre el mismo.  NO SE PUDE REPETIR LA LLAVE EN EL DICCIONARIO POR LO MISMO.
 
     #Valor: cualquier objeto de Python. 
 
@@ -35,5 +37,19 @@ dic = {
     cons : 3
 }
 
- ######### Acceso a la lista #########: 
+
+
+############# Acceso al Diccionario ############: 
+#Cuando accedo a la llave en verdad estoy accedindo al valor por medio de su indice, pero en este caso el indice es la llave (porque no hay indexación con números), Lista acceso: lista[0] = 'jose', dicc['nombre'] = jose.  
+
+#Sintaxis: diccionario[llave]
+
+print(dic[(3,3)])
+#mama
+print( dic['casa'] )
+#Av 34, puedo cambiar este valor si así lo deseo:
+
+dic['casa'] = 'Calle 146'
+print(dic['casa'])
+#Calle 146
 
