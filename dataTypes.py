@@ -1,5 +1,5 @@
 
-################## DATOS ITERABLES ###############################
+################## DATOS ITERABLES o subscriptables [] ###############################
 #1. Listas.
 #2. Tuplas.
 #3. Strings.

@@ -213,3 +213,32 @@ print(dict1)
 #################### iterar #############################
 #Puedo iterar con un FOR EACH por cada valor, llave o item llamando al objeto vista del diccionario, cuando lo hago por item puedo asignar dos variables de iteración:
 
+#1. por cada llave. 
+    #lo hago iterando la LISTA que surge de llamar a las llaves del diccionario:
+print(dict1.keys())
+    #dict_keys([1, 2, 'casa', 'bebé'])
+
+
+for llave in dict1.keys():
+    print(llave)
+    
+#lo mismo por valor: 
+for valor in dict1.values():
+    print(valor)
+    
+ 
+print('---------------------')
+
+for i in dict1: # sin llamar a item o llave o valor imprime el valor.
+    print(i)
+    
+#en item se puede llamar a llave y valor:
+for llave, valor in dict1.items():
+    print(f'{llave} : {valor}')
+
+#print():
+#1 : uno
+#2 : dos
+#casa : house
+# bebé : baby
+
