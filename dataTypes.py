@@ -1,4 +1,63 @@
 
+
+##################################### TIPOS DE DATO POR DEFECTO DE PYTHON ######################################
+
+#1. Tipos de texto:   
+    # str: Para representar cadenas de texto1.
+    
+#2. Tipos numéricos:
+    # int: Para representar números enteros1.
+    # float: Para representar números de punto flotante1.
+    # complex: Para representar números complejos1.
+    
+#3. Tipos de secuencias:
+    # list: Para representar listas de elementos1.
+    # tuple: Para representar tuplas, que son listas inmutables de elementos1.
+    # range: Para representar una secuencia inmutable de números1.
+
+#4. Tipo de mapeo:
+    # dict: Para representar diccionarios, que son conjuntos de pares clave-valor1.
+
+#5. Tipos de conjunto:
+    # set: Para representar conjuntos, que son colecciones no ordenadas de elementos únicos1.
+    # frozenset: Para representar conjuntos inmutables1.
+
+#6. Tipo booleano:
+    # bool: Para representar valores booleanos True y False1.
+
+#7. Tipos binarios:
+    # bytes: Para representar secuencias de bytes1.
+    # bytearray: Para representar secuencias de bytes mutables1.
+    # memoryview: Para representar vistas de memoria de datos binarios1.
+
+#8. Tipo None:
+    # NoneType: Tiene un único valor, None, que se utiliza para representar la ausencia de valor1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ################## DATOS ITERABLES o subscriptables [] ###############################
 #1. Listas.
 #2. Tuplas.
