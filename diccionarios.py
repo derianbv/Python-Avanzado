@@ -257,3 +257,13 @@ def switch_func(value):
 print(switch_func(1))  # Imprime "uno"
 print(switch_func(0))  # Imprime "cero"
 print(switch_func(5))  # Imprime "Valor inválido"
+
+
+
+
+
+
+
+############################### dict comprehension ######################################################
+#Puedo crear diccionarios con la notación de dict comprehension:
+

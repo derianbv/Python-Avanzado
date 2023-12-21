@@ -162,3 +162,41 @@ listaa = [98,76,44]
 b.append(listaa)
 print(a)
 #[1, 2, 3, [98, 76, 44]] se evidencia que cambió el espacio en memoria
+
+
+
+
+
+
+
+######################### zip() ########################################
+#zip(iterable1 ... iterable n)
+#retorna un tipo de objeto zip que puede ser convertido a tupla o diccionario o lista. 
+
+#Va a pegar los datos que esten en la misma posición de dos iterables, cada pareja o grupo (porque pueden ser más de dos elementos) va a quedar dentro de un diccionario: 
+
+iterable1 = [1,2,3]
+iterable2 = ('uno','dos','tres')
+
+listaDeiterables = list(zip(iterable1,iterable2))
+print(listaDeiterables)
+#[(1, 'uno'), (2, 'dos'), (3, 'tres')]
+
+
+#Un iterable tiene más elementos que el otro: 
+
+it1 = [1,2,3,4,5,6]
+it2 = ['uno','dos']
+dict = dict(zip(it1,it2))
+print(dict)
+#{1: 'uno', 2: 'dos'} se repite el método hasta agotar los elementos del iterable que tenga menos (it2).
+
+
+
+#Muestra de muchos iterables: 
+dict = {'num1':'uno','num2':'dos'}
+it1 = [1,2,3,4,5,6]
+it2 = ['uno','dos','tres']
+listaDeZip = list(zip(dict,it1,it2))
+print(listaDeZip)
+#[('num1', 1, 'uno'), ('num2', 2, 'dos')] cuando se pegan los elementos de un diccionario lo hace con las keys más no las los valores.
