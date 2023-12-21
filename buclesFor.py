@@ -26,3 +26,5 @@ for nombre,edad,ubicacion in personas: #llamo a tres variables
 # Hola me llamo Luisa. Tengo 14 años y vivo en Florida.
 # Hola me llamo Melissa. Tengo 22 años y vivo en Zurich.
 
+
+

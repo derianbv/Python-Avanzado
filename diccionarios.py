@@ -267,3 +267,80 @@ print(switch_func(5))  # Imprime "Valor inválido"
 ############################### dict comprehension ######################################################
 #Puedo crear diccionarios con la notación de dict comprehension:
 
+
+#Sintaxis: diccionario = {valor( puede ir if) : llave(puede ir if Y ELSE) for valor, llave in otro iterable (if para agregar datos de otro iterable Y ELSE)}
+
+amigos = {'camilo':20,'alba' : 21, 'Nayi':23}
+
+edadEn5años = { valor : 'menor' if llave < 21 else 'mayor' for valor, llave in amigos.items() }
+print(edadEn5años)
+#{'camilo': 'menor', 'alba': 'mayor', 'Nayi': 'mayor'}
+
+
+
+#Basado en un loop: 
+
+loopDict = {i : 'None' for i in range(11) if i % 2 == 0}
+print(loopDict)
+#{0: 'None', 2: 'None', 4: 'None', 6: 'None', 8: 'None', 10: 'None'}
+
+
+
+
+
+
+
+
+
+################################ ChainMap #####################################################################
+
+#Me permite pegar diccionarios (cómo hacer varias veces update()), las llaves repetidas se quedarán en el diccionario final dependiendo del orden en el que le pasé los diccionarios como parámetro (diferente a update()).
+
+#importarlo de la librerira collections
+
+from collections import ChainMap
+
+chainedMap = ChainMap(amigos, dict1, dict2)
+print(chainedMap)
+#ChainMap({'camilo': 20, 'alba': 21, 'Nayi': 23}, {1: 'uno', 2: 'dos', 'casa': 'house', 'bebé': 'baby'}, {'beso': 'kiss', 'amor': 'love', 1: 'uno', 2: 'dos'})
+
+#RETORNA UN OBJETO DE TIPO ChainMap que tiene los siguientes métodos: 
+
+        # maps: Es una lista ordenada de diccionarios. Esta lista es el único estado almacenado y puede ser modificada para cambiar qué mapeos se buscan1.
+
+        # new_child(m=None, **kwargs): Retorna un nuevo ChainMap que contiene un nuevo mapa seguido de todos los mapas en la instancia actual. Si se especifica m, se convierte en el nuevo mapa al principio de la lista de mapeos; si no se especifica, se usa un diccionario vacío1.
+
+        # parents: Es una propiedad que retorna un nuevo ChainMap que contiene todos los mapas en la instancia actual excepto el primero1.
+
+        # keys(): Muestra todas las claves de todos los diccionarios en ChainMap2.
+
+        # values(): Muestra los valores de todos los diccionarios en ChainMap2.
+
+        # Además de estos, ChainMap soporta todos los métodos usuales de los diccionarios, como get(), items(), update(), etc1.
+        
+        
+        
+        
+################################ DESEMPAQUETADO DE DICCIONARIOS ##########################################################
+
+#Con un solo azterizco el diccionario retorna las llaves: 
+mama = {'nombre':'Erika', 'parentezco':'madre', 'edad': 42}
+print(*mama)
+#nombre parentezco edad
+
+
+#Verdadero desempaquetado (**): 
+    #Básicamente es como el diccionario pero quitandole los {} 
+    # entonces **mama = nombre='Erika', parentezco='madre', edad=42 HACIENDO ENFASIS EN LA LLAVE. (es como pasar la llave pero con información por dentro de la llave (value))
+    
+        #Que son argumento de palabra clave que sirven para pasarlos a funciones como parámetros en donde se nos pida poner LAS LLAVES (Solo las llaves), NO se pueden impirmir porque print() no acepta asignación. 
+
+def saludarFamilia(nombre,parentezco,edad):
+    print(f'{nombre} es el nombre de mi {parentezco} y tiene {edad} años')
+    
+saludarFamilia(**mama)
+#Erika es el nombre de mi madre y tiene 42 años
+
+
+
+
