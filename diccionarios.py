@@ -242,3 +242,18 @@ for llave, valor in dict1.items():
 #casa : house
 # bebé : baby
 
+
+
+#################### Switch como forma de diccionario ###################
+#es más eficiente usar un diccionario como switch por la compejidad de las hash table.
+def switch_func(value):
+    switch = {
+        0: "cero",
+        1: "uno",
+        2: "dos"
+    }
+    return switch.get(value, "Valor inválido")
+
+print(switch_func(1))  # Imprime "uno"
+print(switch_func(0))  # Imprime "cero"
+print(switch_func(5))  # Imprime "Valor inválido"
