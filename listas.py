@@ -170,38 +170,54 @@ lista4.remove('a')
 #['b', 'ELEMENTO', 'c', 1, 2, 3, 4, 'ÚLTIMO']
 
 #---------- comparación ---------------
-#remove(x): elimina la primera aparición de x,
-#pop(): elimina y retorna el último elemento de x, 
-#pop(i): elimina y retorna el elemento en i. 
+#lista.remove(x): elimina la primera aparición de x,
+#lista.pop(): elimina y retorna el último elemento de x, 
+#lista.pop(i): elimina y retorna el elemento en i. 
 
 
-#8. clear(): elimina todos los elementos de la lista. 
+#8. lista.clear(): elimina todos los elementos de la lista. 
 
 
 
 
-#9. sort(): 
+#9. lista.sort(key,reverse): NO DEVUELVE LA LISTA ORDENADA, SOLO LA ORDENA Y DEVUELVE NONE.
 #Funciona con Timsort internamente
 #Ordena ascendentemente una lista en python 
-# recibe dos parámetros sort(key: función con la que ordenar, reverse = true or false: pasarlo a orden descendente
+# recibe dos parámetros lista.sort(key: función con la que ordenar, reverse = true or false: pasarlo a orden descendente
 #Key puede ir con: 
     # key = lambda
     # key = f(x)
     # key = len 
 
+
+# lista1 = [4,2,6,1,445,0]
+
+# #print(lista1.sort())
+# #print(lista1)
+# #[0, 1, 4, 5, 6, 445]
+
+
+
+# def fun1(x:int): 
+#     return (x**2 - x*2)
+
+# lista1.sort(key=fun1)
+# print(lista1)
+# [1, 2, 0, 4, 6, 445]
+
 #Info más detallada en el archivo funciones.py en la parte de sorted()
 
 
 
-#10. reverse() revierte la lista.
+#10. lista.reverse() revierte la lista, retorna none
 
 
 
-#11. count(x) cuenta la cantidad de veces que se encuentra x en la lista, retorna un entero.
+#11. lista.count(x) cuenta la cantidad de veces que se encuentra x en la lista, retorna un entero.
 
 
 
-#12. .copy() crea una copia en la memoria de una lista (Shallow Copy)
+#12. lista.copy() crea una copia en la memoria de una lista (Shallow Copy)
 
 #Shallow quiere decir que copia y CREA elementos nuevos cuando solo tienen una capa de profundidad, eje: 1,True, "mamá", 32. 
 
