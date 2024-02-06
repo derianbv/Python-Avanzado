@@ -7,7 +7,7 @@
 
 
 
-#Sintaxis lista[inicio de intervalo(incluye): fin de int (pared:excluye) : pasos (solo enteros)]
+#Sintaxis lista[inicio de intervalo(incluye int: fin de int (pared:excluye) int: pasos (solo enteros)]
     #inicio: si no se pone nada se asume que es 0: [:n:m] = [0:n:m]
     #fin: si no se pone nada se asume que es el largo del arreglo: [n::m] = [n:len(arreglo):m]
     #pasos: si no se pone nada se asume que va a pasos de a 1: [n:m:] = [n:m:1]

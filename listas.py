@@ -137,7 +137,7 @@ print(palabras.index("soy", 2, 5))
 
 
 
-#4. lista.append(x): mete lo que sea que es x al final de la lista
+#4. lista.append(x): mete lo que sea que es x al final de la lista. Retorna None
 
 
 

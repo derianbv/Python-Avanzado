@@ -103,10 +103,10 @@ print(eventos)
 
 ##################################### Métodos ##################################
 
-#1. clear(): limpia los elementos del diccionario. 
+#1. diccionario.clear(): limpia los elementos del diccionario. 
 
 
-#2. copy(): copia el arreglo superficialmente (shallow), los elementos que posean capas de profundidad (Ej: listas (profundidad 2), o listas dentro de listas (profundidad 3) solo serán apuntadores al diccionario original por lo tanto realizar cambios a estos datos en la copia también modificará a los datos el diccionario original.
+#2. diccionario.copy(): copia el arreglo superficialmente (shallow), los elementos que posean capas de profundidad (Ej: listas (profundidad 2), o listas dentro de listas (profundidad 3) solo serán apuntadores al diccionario original por lo tanto realizar cambios a estos datos en la copia también modificará a los datos el diccionario original.
 
     #Hacer deep copy (copiar el diccionario y también los datos con más capas de profundidad para que sean independientes por diccionario): 
 
@@ -138,7 +138,7 @@ print(nuevoDict)
 
 
 
-#4. get(X, valorSiNoEstáX):
+#4. diccionario.get(X, valorSiNoEstáX):
     #sirve para buscar el valor de la llave en un diccionario, si no está esa llave devuelve por defecto None, si se define valorSiNoEstáX entonces al no encontrar el dato retronará valorSiNoEstáX:
 
 #Ejemplo: 
@@ -152,7 +152,7 @@ print(nuevoDict.get(5,'no está en el diccionario')) #definiendo el segundo par�
 
 
 
-#5. items(): devuelve llave:valor del diccionario: 
+#5. diccionario.items(): devuelve llave:valor del diccionario: en forma de una lista con las parejas de tuplas 
 print(eventos.items())
 #dict_items([('Evento 1', '2001'), ('Evento 2', '2002'), ('Evento 3', '2003')]), son referencias a los items de la lista para ser modificados(objeto vista)
 
