@@ -157,14 +157,14 @@ print(eventos.items())
 #dict_items([('Evento 1', '2001'), ('Evento 2', '2002'), ('Evento 3', '2003')]), son referencias a los items de la lista para ser modificados(objeto vista)
 
 
-#6. keys(): devuelve un objeto vista de todas las keys. 
+#6. diccionario.keys(): devuelve un objeto vista de todas las keys. 
 
 
-#7. values(): devuekve un objeto vista de todos los valores de las llaves.
+#7. diccionario.values(): devuekve un objeto vista de todos los valores de las llaves.
 
 
 
-#8. pop(llave):  quita el elemento del diccionario y retorna su valor, si no lo encuentra dispara un error.
+#8. .diccionario.pop(llave):  quita el elemento del diccionario y retorna su valor, si no lo encuentra dispara un error.
     #pop(llave,d): d = valor que podemos poner para que se imprima si no encuentra la llave. 
     
 
