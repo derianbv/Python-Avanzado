@@ -200,3 +200,29 @@ it2 = ['uno','dos','tres']
 listaDeZip = list(zip(dict,it1,it2))
 print(listaDeZip)
 #[('num1', 1, 'uno'), ('num2', 2, 'dos')] cuando se pegan los elementos de un diccionario lo hace con las keys más no las los valores.
+
+
+
+
+#ord("caracter") muestra el códico acii de un carácter. 
+#Los carácrteres se guardan como bytes (un solo byte del 0 (00000000) al 125 ((11111111)).
+print(ord("h"))
+#chr() hace lo contrario ( de número a carácter)
+
+
+
+
+######################### encode or decode() ########################################
+
+# string.encode() pasa un string a arreglos de bytes 
+# bytes.decode() pasa bytes a strings 
+
+#sirven para cambiar strings a bytes antes de ser enviados a algun servido (socked) que solo entiende bytes. 
+
+
+
+
+
+
+## dir(objeto):
+#imprime todo lo que un objeto tenga por dentro
