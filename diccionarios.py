@@ -17,7 +17,7 @@
 
 #Sintaxis:
 
-#miDic = {clave : valor, clave2, valor2}
+#miDic = {clave : valor, clave2: valor2}
     
     #clave: debe ser un valor INMUTABLE de python (tuplas, números, strings, frozenSets) debido a que al aplicar la función hash si el valor cambiara ya no se podría acceder a su indice dentro de la tabla. Se necesita que sea siempre el mismo.  NO SE PUDE REPETIR LA LLAVE EN EL DICCIONARIO POR LO MISMO.
 
@@ -42,7 +42,7 @@ dic = {
 ############# Acceso al Diccionario ############: 
 #Cuando accedo a la llave en verdad estoy accedindo al valor por medio de su indice, pero en este caso el indice es la llave (porque no hay indexación con números ya que el diccionario no es secuencial), Lista acceso: lista[0] = 'jose', dicc['nombre'] = jose.  
 
-#Sintaxis: diccionario[llave]
+#Sintaxis: diccionario[llave] = valor 
 
 print(dic[(3,3)])
 #mama
