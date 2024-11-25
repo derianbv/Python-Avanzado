@@ -264,11 +264,19 @@ print(f'{lista3D} \n {DeepLista3D}')
 
 #del(lista[0]) borra el item de la lista en la posicion 0 
 
-#Igualar listas. 
+---------------------#Igualar listas COPIA SUPERFICIAL (SHALLOW) . 
 
 listaA = [1,2,3,4]
 listaB = listaA 
 #Ambas apuntarás al mismo espacio en memoria y cambios se veran reflejados en ambas listas 
+
+print(f"{id(listaA)} || {id(listaB)}")
+#140716404014720 || 140716404014720
+
+#Una manera rápida para copiarlas con espacios en memoria diferentes es clonar [:]: 
+ListaB = ListaA[:]
+
+
 
 ##################### Repetición y concatenación #####################################
 
