@@ -1,4 +1,4 @@
-###########3################### Strings ################################
+############################## Strings ################################
 
 #Las strings son un tipo de datos inmutables e iterables (subscriptibles)
 
@@ -23,6 +23,7 @@ print(str1[-9])
 
 #Métodos ----------------------------------------------------------------------------------------------------------
 #Strings have sequenced methods y metodos para texto": ejemplo: .find(),.replace(),.split(): divide todo en un arreglo. 
+#!!!!!!11 cuando le aplico un método a una string me resulta en una string diferente
 
 #1.Format: agarra un string interpolation para poner .format(va1...varn) en sus place holder.
 
