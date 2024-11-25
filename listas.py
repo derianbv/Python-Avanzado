@@ -127,6 +127,7 @@ print(lista3)
 
 #Se puede colocar un rango de busqueda, en el ejemplo de abajo va del indice 2 al indice 5 (por defecto no se piden)
 #busque de izquierda a deracha, así que si se pone el inicio del rango de búsqueda en el ultimo item, va a salir que el elemento no está en la lista así sí esté 
+retorna la primera isntacia que encuentre de este item 
 palabras = ["Yo", "soy", "un", "Yo", "soy", "Pythonista"]
 
 print(palabras.index("soy", 2, 5)) 
@@ -197,7 +198,7 @@ lista4.remove('a')
 # #[0, 1, 4, 5, 6, 445]
 
 
-
+#Mapea a la list entera con esta funcion y luego dependiendo del resultado crea la lista 
 # def fun1(x:int): 
 #     return (x**2 - x*2)
 
@@ -258,7 +259,7 @@ print(f'{lista3D} \n {DeepLista3D}')
 # [1, 2, 3, [4, [5, 6, 'CASPER']], {'nombre': 'Lucia'}] 
 # [1, 2, 3, [4, [5, 6, 'CASPER', 'SOLO APAREZCO EN LA COPIA']], {'nombre': 'Lucia'}] 
 
-
+#del(lista[0]) borra el item de la lista en la posicion 0 
 
 
 
