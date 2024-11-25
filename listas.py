@@ -220,6 +220,9 @@ lista4.remove('a')
 
 #12. lista.copy() crea una copia en la memoria de una lista (Shallow Copy)
 
+
+#string.split(",": es un delimitador que queremos ecoger, por defecto es un espacio vacio " ") convierte a una lista con valores separados por espacio
+
 #Shallow quiere decir que copia y CREA elementos nuevos cuando solo tienen una capa de profundidad, eje: 1,True, "mamá", 32. 
 
 copiaLista = lista4.copy()
@@ -261,8 +264,11 @@ print(f'{lista3D} \n {DeepLista3D}')
 
 #del(lista[0]) borra el item de la lista en la posicion 0 
 
+#Igualar listas. 
 
-
+listaA = [1,2,3,4]
+listaB = listaA 
+#Ambas apuntarás al mismo espacio en memoria y cambios se veran reflejados en ambas listas 
 
 ##################### Repetición y concatenación #####################################
 
