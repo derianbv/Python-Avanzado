@@ -75,6 +75,7 @@ print(tuplaRep*4)
 
 #puedo aplicarle id(tupla), len(tupla), in tupla, etc.
 
-
+# sum(tupla): suma los elementos de la tupla. 
+# max(tupla) o min(tupla): encuentra el valor menor o máximo de la tupla
 
 
