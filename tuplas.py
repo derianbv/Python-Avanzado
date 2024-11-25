@@ -2,6 +2,7 @@
 
 #Agrupación de datos INVARIABLE E INMUTABLE.
 #basicamente con las listas y su manejo pero sin los métodos de las litas.
+#Tiene de métodos de indentación positiva o negativa 
 
 #Puede agrupar diferentes tipos de datos: 
 
@@ -45,7 +46,7 @@ print(resto)
 #[3, 4, 5, 6, 7]
 
 
-
+############################### concatenación #######################################
 #se puede concatenar tuplas.
 
 tupla2 = ((1,2),'b')
