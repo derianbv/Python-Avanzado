@@ -59,21 +59,17 @@ print(dic['casa'])
 #Escribimos una llave que no tengamos en el diccionario y le asinamos un valor: 
 
 
-dic2 = {'num1':2,
-        'edad':45}
-dic['miLista'] = [4,4,4,4]
+dic2 = {'num1':2,'edad':45}
+        
+dic2['miLista'] = [4,4,4,4]
 print(dic2)
-#{'num1': 2, 'edad': 45}
+
+#{'num1': 2, 'edad': 45, 'miLista': [4, 4, 4, 4]}
 
 
 
 
-
-
-
-
-
-############################ ORDEN #3#############################:
+############################ ORDEN ##############################:
 
 
 #Los diccionarios están ordenados POR ORDEN de inserción: 
@@ -97,7 +93,7 @@ print(eventos)
 #{'Evento 1': '2001', 'Evento 2': '2002', 'Evento 3': '2003'}
 print(eventos)
 #{'Evento 1': '2001', 'Evento 2': '2002', 'Evento 3': '2003'}   
-#no importa cuantas veces imprimamos, los eventos aparecen en orden de agregados. 
+#no importa cuantas veces imprimamos, los eventos aparecen en orden de agregados desde python 3
 
 
 
@@ -169,7 +165,7 @@ print(eventos.items())
     
 
 
-#9. popitem() (no toma parámetros): elimina y retorna el último item ingresado, retorna clave y valor, si el dict está vacio dispara un error. 
+#9. .popitem() (no toma parámetros): elimina y retorna el último item ingresado, retorna clave y valor, si el dict está vacio dispara un error. 
 
 
 
@@ -191,7 +187,7 @@ print(numeros)
 
 
 #11. update(otroIterable ordenado (llave,valor) o dict): si hay llaves repetidas en ambos diccionarios, el dccionario actualizando se quedará con las llaves del segundo diccionario y no con su propia llave repetida. 
-
+#es similar a un .extend de la lista
 dict1 = {1:'uno',2:'dos'}
 dict2 = {'beso':'kiss', 'amor':'love'}
 
