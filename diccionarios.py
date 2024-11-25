@@ -205,6 +205,10 @@ print(dict1)
 
 
 
+#12. del(diccionario("LlaveABorrar")
+
+#13. se puede realizar una búsqueda "Llave" in diccionario -> True
+
 
 #################### iterar #############################
 #Puedo iterar con un FOR EACH por cada valor, llave o item llamando al objeto vista del diccionario, cuando lo hago por item puedo asignar dos variables de iteración:
