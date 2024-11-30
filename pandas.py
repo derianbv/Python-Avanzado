@@ -11,6 +11,7 @@ los values ordenados en listas van a ser los rows, se asignan en orden entonces 
 ######################### Métodos ###########################
 '''
 1. var = pandas.read_csv(archivo ) Leer CSV, retorna en var una tabla con los archivos del csv, similar para excel .real_xlsx()
-2. buscar en las tablas: tabla.iloc[n,m]: (0 <= n,m)  n dice que busque en la fila n, y m en la columna m, ejemplo tabla.iloc(2,3) fila 3 columna 4 (porque empieza en 0)
+2. buscar en las tablas: tabla.iloc[n,m]: (0 <= n,m)  n dice que busque en la fila n, y m en la columna m, ejemplo tabla.iloc(2,3) fila 3 columna 4 (porque empieza en 0), también pueden ir
+con el título de la columna, Ejemplo: tabla.iloc(2,"año_de_publicacion"): en la colum año de publicación vaya a la 3ra fila
 
 '''
