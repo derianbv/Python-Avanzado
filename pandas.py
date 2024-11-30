@@ -2,13 +2,24 @@ import pandas
 
 #Se utiliza para leer archivos y analizar información 
 
-'''
-Gurda los archivos en data frames o tablas, se puede pasar de un diccionario a un data frame con: dataframeeee = pandas.DataFrames(diccionario), las keys van a ser las columbas y 
+''' 
+
+################# Data Frames ####################################################################################################################################################
+#Hay que instalarlo con pip. 
+
+
+Gurda los archivos en data frames o tablas (bidimensionales) , se puede pasar de un diccionario a un data frame con: dataframeeee = pandas.DataFrames(diccionario), las keys van a ser las columbas y 
 los values ordenados en listas van a ser los rows, se asignan en orden entonces el valor de la la row 1 ... n debe tener sentido con las las otras columnas.
 
 ### Acceso a cierta columna: 
 
-    tabla['titulo_dela_colum']
+    tabla['Name'] = similar al SELECT Name from tabla, puedo usarlo para varias tablas a la vez: df[['Department','Salary','ID']]
+
+	Name	
+0	Rose	
+1	John	
+2	Jane	
+3	Mary	
 
 
 
@@ -48,4 +59,8 @@ tabla[ 'año' > 2002 ]
 
 
 
+
+##################################################### Series #######################################################################################
+
+Es la manera de Pandas de guardar Vectores unidimencionales para poder aplicarles funciones Pandas 
 '''
