@@ -6,10 +6,14 @@ import pandas
 Gurda los archivos en data frames o tablas, se puede pasar de un diccionario a un data frame con: dataframeeee = pandas.DataFrames(diccionario), las keys van a ser las columbas y 
 los values ordenados en listas van a ser los rows, se asignan en orden entonces el valor de la la row 1 ... n debe tener sentido con las las otras columnas.
 
+### Acceso a cierta columna: 
 
-'''
+    tabla['titulo_dela_colum']
+
+
+
 ######################### Métodos ###########################
-'''
+
 1. var = pandas.read_csv(archivo ) Leer CSV, retorna en var una tabla con los archivos del csv, similar para excel .real_xlsx()
 
 
@@ -22,4 +26,26 @@ con el título de la columna, Ejemplo: tabla.iloc(2,"año_de_publicacion"): en l
 
 
 3. tabla.index = [a,b,c]: cambia el index de la tabla de 0,1,3 a a,b,c PERO ahora para entrar a sus datos se pasa de iloc[] -> loc[]
+
+
+4. tabla.unique(): exactamente igual que linux o sql, quita valores repetidos. 
+
+
+
+###### Guardar #############
+
+tabla.to_csv('nombre_archivo')
+
+
+
+
+
+
+########################## Comparadores lógicos #####################
+
+Esto me va a generar una columna de booleanos, si pasa es true y sino es false 
+tabla[ 'año' > 2002 ] 
+
+
+
 '''
