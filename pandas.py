@@ -21,6 +21,10 @@ los values ordenados en listas van a ser los rows, se asignan en orden entonces 
 2	Jane	
 3	Mary	
 
+Asignarla a una variable: 
+
+columnaNueva = tabla[['Name]]: debe hacerse con doble parentesis porque si se hace con uno se devuelve es una Serie encambio. 
+	
 
 
 ######################### Métodos ###########################
@@ -31,7 +35,7 @@ los values ordenados en listas van a ser los rows, se asignan en orden entonces 
 2. buscar en las tablas: tabla.iloc[n,m]: (0 <= n,m)  n dice que busque en la fila n, y m en la columna m, ejemplo tabla.iloc(2,3) fila 3 columna 4 (porque empieza en 0), también pueden ir
 con el título de la columna, Ejemplo: tabla.iloc(2,"año_de_publicacion"): en la colum año de publicación vaya a la 3ra fila
   en estos números se pueden usar rangos, ejemplo: nuevaTabla = tabla.iloc[0:2,0:3] : quiero una tabla que vaya por las dos primeras filas y las tres primeras columnas, en las columnas
-  también se pueden usar el nombre de las llaves tabla.iloc[0:2, 'título' : 'año ]
+  también se pueden usar el nombre de las llaves tabla.iloc[0:2, 'título' : 'año ] también se puede con las filas. 
 
 
 
@@ -41,7 +45,7 @@ con el título de la columna, Ejemplo: tabla.iloc(2,"año_de_publicacion"): en l
 
 4. tabla.unique(): exactamente igual que linux o sql, quita valores repetidos. 
 
-
+5.tabla.head(): devuelve las primeras 5 columnas. 
 
 ###### Guardar #############
 
