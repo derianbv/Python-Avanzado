@@ -20,7 +20,8 @@ Ejemplo:
 
     1. string1 = archivo.read(n): sin la n guarda todo los qué esté en el archivo de txt en una string, con n avanzará un puntero hasta n y guardará todo lo que recorra 
     2. archivo.closed = true or false, muestra si está cerrado 
-    3. archivo.readline() = retorna cada línea en un espcacio de un arreglo. 
+    3. archivo.readline(n) = retorna cada línea en un espcacio de un arreglo, funciona igual que .read(n) pero el máximo es el final de le línea, límite que read() sí pasa, si uso más de un readline() entonces iré retornando uno a uno la info de cada línea
+    4. archivo.seek(n) = mueve el puntoero al n+1 byte 
     
     
   '''
