@@ -14,6 +14,12 @@ Ejemplo:
   with open('archivo.txt', 'w') as archivo:
     archivo.write('Hola, mundo!')  # El archivo se cierra automáticamente.
 
+Se pueden concatenar: 
+
+Ejemplo: 
+
+with open ('archivo1.txt', "r") as arch1 
+  with open ("archivo2.txt", "w") as arch2
 
 
     #################### Métodos #################################3
@@ -22,6 +28,12 @@ Ejemplo:
     2. archivo.closed = true or false, muestra si está cerrado 
     3. archivo.readline(n) = retorna cada línea en un espcacio de un arreglo, funciona igual que .read(n) pero el máximo es el final de le línea, límite que read() sí pasa, si uso más de un readline() entonces iré retornando uno a uno la info de cada línea
     4. archivo.seek(n) = mueve el puntoero al n+1 byte 
+
+    #### Write #####
+    
+  tienes que estar me modo open(ruta, "w")
+    archivo.write(texto) sobre escribe el archivo agregando "texto" en el archivo. Cada vez que se hace se sobre escribe
+    para solo poder hacer appends se puede hacer con open(ruta, "a")
     
     
   '''
