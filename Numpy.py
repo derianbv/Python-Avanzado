@@ -19,7 +19,11 @@ numpy.py, numpy.sin(x)
 
 
 ###### 2D matrix ##################
+Indexing y slicing igual a los arreglops, mismos procedimientos que con los vectores
 
+matriz.ndim() = numero de arreglos nested 
+matriz.shape() = da n,m 
+matriz size() = cantidad de elementos n * m
 
 
 
