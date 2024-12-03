@@ -23,7 +23,7 @@ los values ordenados en listas van a ser los rows, se asignan en orden entonces 
 
 Asignarla a una variable: 
 
-columnaNueva = tabla[['Name]]: debe hacerse con doble parentesis porque si se hace con uno se devuelve es una Serie encambio. 
+columnaNueva = tabla[['Name']]: debe hacerse con doble parentesis porque si se hace con uno se devuelve es una Serie encambio. 
 	
 
 
