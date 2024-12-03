@@ -57,8 +57,9 @@ server.request.body -> relacionado con el body de un mensaje HTTP
 &: Separa parámetros 
 
 Ejemplo: 
-
-
+url = "http//youtube.com"
+VarQueQuiero = {'nombre':'jose','id':'4444'}
+server = request.get(url,params=VarQueQuiero)
 '''
 
 
