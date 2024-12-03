@@ -14,5 +14,7 @@ Ejemplos a=b+c X, a = b + c BIENNN
     AnimalMarino Class
     7. Constantes con mayus y separadas con underscore: VALOR_PI
 
+Existen programas que anlizan el compliance de seguimiento de un bueno código 
+Por ejemplo black en el pip ordena nuestro codigo automáticamente. black trabajo.py 
 
 '''
