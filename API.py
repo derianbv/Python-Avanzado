@@ -2,6 +2,8 @@
 ################################### EPP #################################################
 # Son dos piezas de software que hablan entre sí - como un traductor
 '''
+Son librerias que hay que descargar por pip 
+
 # Hay dos actores: yo (cliente) y un servidor (endpoint), nos mensajeamos por medio de HTTP messages con json insertado
 Los mensajes HTTP contienen: 
 
@@ -13,6 +15,8 @@ Meta info
 ---------Response body---------------------------- BODY
 El archivo o mercancía que estaba pidiendo
 
+Get: le pido el HTML.index de la pagina.
+Server me responde con OK 200 y me manda el HTML en el body del mensaje http
 
 
 ################## Códigos #######################
@@ -45,7 +49,7 @@ Route: /home
 Libreria: import request ############# request ############# Library 
 
 la manera de obtener un server es 
-server = request.get(youtube.com)
+respuesta = request.get(youtube.com)
 server.request.body -> relacionado con el body de un mensaje HTTP
 
 
@@ -56,10 +60,27 @@ server.request.body -> relacionado con el body de un mensaje HTTP
 ?: Es el inicio de la query
 &: Separa parámetros 
 
+ESTO ES CUANDO QUIERO PEDIRLE ALGO EN ESPECÍFICO A LA PÁGINA: 
+Ejemplo: http://youtube/get
+
 Ejemplo: 
 url = "http//youtube.com"
 VarQueQuiero = {'nombre':'jose','id':'4444'}
-server = request.get(url,params=VarQueQuiero)
+respuesta = request.get(url,params=VarQueQuiero)
+Para post es igual: http//youtube.com/post
+
+para obtener el html de un request get: 
+  respuesta.text
+
+Respuesta (respuesta = request.get(url)) tiene el toda la info del mensaje HTTP entre los mensajes con el server :), si no
+le pongo params entonces se la pido toda !!!!!!!!!!!!!!!!!!!!
+ejemplos: respues.status_code = 200 -> es un atributo, no un método
+respuesta.header = metadatos de la pagina. 
+
+
+
+
+
 '''
 
 
