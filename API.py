@@ -79,7 +79,7 @@ respuesta.header = metadatos de la pagina.
 
 
 
-
+Hay dos tipos de API: REST y SOAP
 
 '''
 
