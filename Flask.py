@@ -1,5 +1,13 @@
 #Es una libreria liviana para realizar páginas web. 
 
+######################## Set up linux ####################### 
+# 1. Instalación: pip install "Flask==2.2.2"
+#es bueno instalar una versión fija de flask como la 2.2.2 para asegurar que una nueva versión no rompa la app. 
+
+#2. creo el archivo server, en donde voy a inicializar la app como abajo, cuando yo la ejecute, dicho archivo se va a convertir en un
+# server. Para ejecutarlo, en linux: flask --app server --debug run    (server es porque el archivo se llama server.py)
+
+
 #Importación: 
 from flask import Flask #Flas está en mayúscula porque es una clase
 app = Flask(__name__) #Acá se utiliza el cosntructor de flask y se le pasa __name__, que es la variable especial de python que le ayuda 
