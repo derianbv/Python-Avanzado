@@ -361,3 +361,11 @@ print(pares)
 
 matriz = [[i+1,i+2,i+3] for i in range(3)]
 print(matriz)
+
+
+
+
+################ REVISAR SI ESTA VACIO ######################3
+#Si una lista está vacia es falsy
+
+if not lista1 #si esta lista está vacia retorna true 
