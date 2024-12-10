@@ -5,8 +5,10 @@
 #es bueno instalar una versión fija de flask como la 2.2.2 para asegurar que una nueva versión no rompa la app. 
 
 #2. creo el archivo server, en donde voy a inicializar la app como abajo, cuando yo la ejecute, dicho archivo se va a convertir en un
-# server. Para ejecutarlo, en linux: flask --app server --debug run    (server es porque el archivo se llama server.py)
+# server. Para ejecutarlo, en linux: flask --app server --debug run    (server es porque el archivo se llama server.py), esto hace que 
+#esa pestaña del terminal corra el servidor 
 
+################# YO SOY EL SERVIDORRRRRRR Y TENGO QUE APRENDER A MANEJAR CUSTOMERS ##########################
 
 #Importación: 
 from flask import Flask #Flas está en mayúscula porque es una clase
