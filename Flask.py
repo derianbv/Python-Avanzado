@@ -31,5 +31,12 @@ que hace internamente, lo que resulta es que en la ruta ('/') se va a ejecutar h
 antes, esta función solo sería una función más en el archivo. 
 '''
 
-def hello_world():
+def hello_world(): #Acá el método Get implicito, 
     return "<b> Hola mama </b>"
+
+
+@app.route('/index', methods=["GET", "POST"])
+def index():
+    if request.method == "GET" return jsonify(status="OK", method="GET"), 200
+    if request.method == "POST" return jsonify(status="OK", method="POST"), 200
+
