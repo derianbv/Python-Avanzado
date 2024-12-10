@@ -84,6 +84,9 @@ def get_author(isbn): #hay que pasarle la var dinámica
 Puedo setear como manejar los errores de mi código
 Miremos este ejemplo: 
 '''
+
+from flask import request
+#Es request de flask y no request de la libreria requests 
 @app.route('/')
 def search_response():
     query = request.args.get("q") #Esta linea agarra los parametros enviados por la url, en este caso busca
