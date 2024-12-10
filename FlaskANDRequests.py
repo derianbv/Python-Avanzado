@@ -72,7 +72,7 @@ def get_author(isbn): #hay que pasarle la var dinámica
     if res.status_code == 200:
         return {"message": res.json()} #este json probablemente tiene el libro
     elif res.status_code == 404:
-        return {"message": "Something went wrong!"}, 404
+        return {"message": "Something went wrong!"}, 404 #SIEMPRE RETORNAR ASÍ: return {str},int
     else:
         return {"message": "Server error!"}, 500
 
