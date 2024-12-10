@@ -40,3 +40,15 @@ def index():
     if request.method == "GET" return jsonify(status="OK", method="GET"), 200
     if request.method == "POST" return jsonify(status="OK", method="POST"), 200
 
+
+
+@app.route("/")
+def get_author():
+    res = requests.get("https://openlibrary.org/search/authors.JSON?q=Michael Crichton") # Le estoy pidiendo al servidor que se contecte al
+    #servidor de la URL y le haga una petición GET 
+    if res.status_code == 200:
+        return {"message": res.json()}
+    elif res.status_code == 404:
+        return {"message": "Something went wrong!"}, 404
+    else:
+        return {"message": "Server error!"}, 500
