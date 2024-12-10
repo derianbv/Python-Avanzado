@@ -78,5 +78,72 @@ def get_author(isbn): #hay que pasarle la var dinámica
 
 
 ##################### ERRORES #######################################
+'''
+Puedo setear como manejar los errores de mi código
+Miremos este ejemplo: 
+'''
+@app.route('/')
+def search_response():
+    query = request.args.get("q") #Esta linea agarra los parametros enviados por la url, en este caso busca
+    # a "q", ejemplo youtube.com/?q="hola", entonces query guardará a "hola" en un diccionario, si no hay devuelve none
+
+    if not query: #es como decir if !query, o, si query es falso: 
+        return {"error_message": "Input parameter missing"}, 422
+
+    # fetch the resource from the database
+    resource = fetch_from_database(query) # busca en la base de datos el valor de q, no es función de requests
+
+    if resource:
+        return {"message": resource}
+    else:
+        return {"error_message": "Resource not found"}, 404
+
+'''
+
+#Ahora puedo usar Linux para hacer gets a mi servidor y mostar esos mensajes: 
+
+FALTA DE QUERY ------------------------
+
+(Linux) curl -X GET -i http://localhost:5000
+
+HTTP/1.1 422 UNPROCESSABLE ENTITY
+Server: Werkzeug/2.2.2 Python/3.7.16
+Date: Thu, 12 Jan 2023 19:45:04 GMT
+Content-Type: application/json
+Content-Length: 44
+Connection: close
+
+{"error_message":"Input parameter missing"}
+#devueve if not query ya que en la url debe haber un "q"= algo
+
+------ QUERY NO EXISTENTE ----------------
+    
+curl -X GET -i http://localhost:5000/nonexistent_route
+
+HTTP/1.1 404 NOT FOUND
+Server: Werkzeug/2.2.3 Python/3.11.8
+Date: Thu, 21 Mar 2024 15:18:55 GMT
+Content-Type: application/json
+Content-Length: 34
+Connection: close
+
+{"error_message":"API not found"}
+# trigerea el else
+
+---- QUERY EXITOSA ------------------------
 
 
+(Linux) curl -X GET -i http://localhost:5000?q=Resource777
+
+HTTP/1.1 200 OK
+Server: Werkzeug/2.2.2 Python/3.7.16
+Date: Thu, 12 Jan 2023 19:45:26 GMT
+Content-Type: application/json
+Content-Length: 26
+Connection: close
+
+{"message":"Resource777"}
+#La respuesta de if resource
+
+
+'''
