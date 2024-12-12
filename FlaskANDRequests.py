@@ -33,15 +33,28 @@ que hace internamente, lo que resulta es que en la ruta ('/') se va a ejecutar h
 antes, esta función solo sería una función más en el archivo. 
 '''
 
+############################### GET POST #########################
 def hello_world(): #Acá el método Get implicito, 
     return ("<b> Hola mama </b>", 200) #Acá le digo que le pase el codigo 200 si todo bn
 
 
 @app.route('/index', methods=["GET", "POST"])
 def index(): #Esta función responde a las solicitudes de los clientes cuando entren aquí
-    if request.method == "GET" return jsonify(status="OK", method="GET"), 200
+    if request.method == "GET" return jsonify(status="OK", method="GET"), 200 #Todo lo que se muestra en una pagina tiene que ser 
+    #pedido por el usuario por medio de un método GET 
     if request.method == "POST" return jsonify(status="OK", method="POST"), 200
+'''
+En el html también hay que indicarle algo para POST y algo para GET:  
 
+<!-- For POST -->
+<form method="POST" action="/data">
+    <!-- Your input fields here -->
+    <input type="submit" value="Submit">
+</form>
+<!-- For GET -->
+<a href="/data">Fetch data</a>
+
+'''
 
 
 @app.route("/")
