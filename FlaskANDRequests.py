@@ -171,7 +171,7 @@ def greetUserBasedOnReq():
     return render_template("result.html", username=username)
 
 if __name__ == "__main__":
-    app.run(debug=True)- 
+    app.run(debug=True)
 
 
 
@@ -191,3 +191,18 @@ if __name__ == "__main__":
 def login():
     username = request.form['username'] #pido lo que salga en el input del html 
     password = request.form['password'] #pido lo que puse en password 
+
+
+
+'''
+2. Redirigir: 
+'''
+from flask import redirect
+
+@app.route('/admin')
+def admin():
+    return redirect('/login') #digamos que el usuario quizo entrar a admin pero su usuario esta incorrecto. 
+#o puede ser redirigido a con una funcion que encuentra la url dandole el nomnre de la función: 
+    return redirect(url_for('login')) #Url for busca a la función log in y la remplaza por su ruta 
+
+
