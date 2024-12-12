@@ -171,4 +171,23 @@ def greetUserBasedOnReq():
     return render_template("result.html", username=username)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)- 
+
+
+
+
+############### ################### FUNCIONES#######################################################
+'''
+1. Obtener datos que el clinte a subido con un POST 
+
+<form method="POST" action="/login">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Submit">
+</form>
+'''
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username'] #pido lo que salga en el input del html 
+    password = request.form['password'] #pido lo que puse en password 
