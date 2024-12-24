@@ -1,3 +1,20 @@
+############################### Pruebas ############################################
+"""
+Tenemos que crear una clase de prueba que va a tener varios test (ya pre establecidos por la clase unit test) que pueden ser los siguientes:
+
+assertEqual	Verifica si dos valores son iguales.
+assertNotEqual	Verifica si dos valores son diferentes.
+assertTrue	Verifica si una condición es verdadera.
+assertFalse	Verifica si una condición es falsa.
+assertIs	Verifica si dos objetos son el mismo.
+assertIsNot	Verifica si dos objetos son diferentes.
+assertIn	Verifica si un elemento está en una colección.
+assertRaises	Verifica si se lanza una excepción esperada.
+
+
+Ejemplo:     self.assertEqual(2 + 2, 4) -> ture
+
+"""
 
 # Import the 'unittest' module to create unit tests for your code.
 import unittest
@@ -44,4 +61,66 @@ class TestDouble(unittest.TestCase):
 # Run all the test cases defined in the module when the script is executed.
 # This will automatically discover and run all the test cases defined in the module.
 unittest.main()
-  
+
+
+#################### OTRO EJEMPLO EXPLICADO ############################################
+
+
+
+
+from SentimentAnalysis.sentiment_analysis import sentiment_analyzer
+
+import unittest
+
+
+
+class TestSentimentAnalyzer(unittest.TestCase): 
+
+    def test_sentiment_analyzer(self): 
+        
+        
+        self.assertEqual(
+            sentiment_analyzer('I love working with Python')['label'],'SENT_POSITIVE'
+         )
+        
+        self.assertEqual(
+            sentiment_analyzer('I hate working with Pyhton')['label'],'SENT_NEGATIVE'
+         )
+
+         self.assertEqual(
+            sentiment_analyzer('I am neutral on Python')['label'],'SENT_NEUTRAL'
+         )
+
+
+unittest.main()
+
+
+# Luego solo debemos correr el archivo y si detecta algun error, sacará algo así: 
+
+'''
+
+======================================================================
+ERROR: test_sentiment_analyzer (__main__.TestSentimentAnalyzer.test_sentiment_analyzer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/project/practice_project/test_sentiment_analysis.py", line 13, in test_sentiment_analyzer
+    sentiment_analyzer('I love working with Python')['label'],'SENT_POSITIVE'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'label'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.255s
+
+FAILED (errors=1)
+'''
+
+# si pasa debería ser así: 
+
+'''
+.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.100s
+
+OK
+'''
