@@ -19,6 +19,24 @@ Get: le pido el HTML.index de la pagina.
 Server me responde con OK 200 y me manda el HTML en el body del mensaje http
 
 
+
+############ Headers ##################
+Los headers (diccionario o json) son como enviar una nota a un compañero del salon, no siempre le voy a decir lo mismo pero ahí le digo lo que el compañero 
+quiere escuchar en cada solicitud por ejemplo, la paso una nota a una API que quiere saber cuales son mis tokens.
+
+
+import requests
+
+url = "https://api.ejemplo.com/endpoint"
+headers = {
+    "Authorization": "Bearer token123",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "User-Agent": "MiCliente/1.0"
+}
+
+
+
 ################## Códigos #######################
 -Prefijos indican la clase (1,2,3,4,5)
 1XX: Todo está yendo bien. 
