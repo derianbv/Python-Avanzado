@@ -27,13 +27,27 @@ quiere escuchar en cada solicitud por ejemplo, la paso una nota a una API que qu
 
 import requests
 
-url = "https://api.ejemplo.com/endpoint"
 headers = {
     "Authorization": "Bearer token123",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "User-Agent": "MiCliente/1.0"
 }
+
+Ejemplos de headers = 
+
+
+
+Host	Especifica el dominio del servidor. Obligatorio en HTTP/1.1.
+Content-Type	Indica el tipo de contenido enviado (como application/json o text/html).
+User-Agent	Identifica al cliente que realiza la solicitud (por ejemplo, navegador, aplicación).
+Accept	Indica los tipos de contenido que el cliente puede procesar (application/json, text/html).
+Authorization	Proporciona credenciales para autenticación (como tokens o credenciales básicas).
+Cache-Control	Controla el comportamiento de almacenamiento en caché.
+Content-Length	Indica la longitud del cuerpo de la solicitud en bytes.
+Cookie	Envia cookies al servidor para mantener sesiones o preferencias del usuario.
+Referer	Indica la URL desde la que se realizó la solicitud.
+Connection	Controla si se reutiliza la conexión (por ejemplo, keep-alive).
 
 
 
@@ -99,6 +113,96 @@ respuesta.header = metadatos de la pagina.
 
 Hay dos tipos de API: REST y SOAP
 
+
+
+
+
+
+
+######################## POST ##################################################################
+
+En post se pueden incluir los siguientes parametros en la función: url, data (o json, son lo mismo solo que uno lo pasa a json), headers que son metadata, timeout que es si el server se 
+demora, allow redirects, etc. 
+
+response = requests.post(
+    url="https://api.ejemplo.com/endpoint",
+    data={"nombre": "Juan", "edad": 30}, #Info que le puedo pasar al server 
+    headers={
+        "Authorization": "Bearer token123",
+        "Content-Type": "application/json"
+    },
+    timeout=10,
+    allow_redirects=True
+)
+
+
 '''
+
+############################################ OBJETOS TIPO RESPONSE ######################################################:
+
+#Un ejemplo de cómo podría ser esta clase implementada por dentro: 
+
+class Response:
+    def __init__(self):
+        self.status_code = None  # Código de estado HTTP (por ejemplo, 200, 404, 500)
+        self.headers = {}        # Diccionario con los encabezados de la respuesta
+        self.text = ""           # Cuerpo de la respuesta como texto
+        self.content = b""       # Cuerpo de la respuesta en bytes
+        self.url = ""            # URL final después de redirecciones
+        self.cookies = {}        # Cookies enviadas por el servidor
+        self.history = []        # Lista de objetos Response de redirecciones
+        self.reason = ""         # Razón del código de estado (por ejemplo, "OK" para 200)
+        self.elapsed = None      # Tiempo de la solicitud como timedelta
+        self.request = None      # Objeto Request asociado a esta respuesta
+
+    def json(self):
+        """
+        Convierte el cuerpo de la respuesta a un objeto Python si es JSON válido.
+        """
+        import json
+        try:
+            return json.loads(self.text)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Error al decodificar JSON: {e}")
+
+    def raise_for_status(self):
+        """
+        Lanza una excepción si el código de estado HTTP indica un error.
+        """
+        if 400 <= self.status_code < 600:
+            raise HTTPError(f"{self.status_code} Error: {self.reason} for URL: {self.url}")
+
+    @property
+    def ok(self):
+        """
+        Devuelve True si el código de estado HTTP es un éxito (200-299).
+        """
+        return 200 <= self.status_code < 300
+
+    @property
+    def is_redirect(self):
+        """
+        Devuelve True si la respuesta es una redirección.
+        """
+        return self.status_code in (301, 302, 303, 307, 308)
+
+    @property
+    def is_permanent_redirect(self):
+        """
+        Devuelve True si la respuesta es una redirección permanente.
+        """
+        return self.status_code in (301, 308)
+
+    def __str__(self):
+        """
+        Representación en cadena para facilitar el debugging.
+        """
+        return f"<Response [{self.status_code}]>"
+
+# Excepción personalizada para manejar errores HTTP
+class HTTPError(Exception):
+    pass
+
+
 
 
