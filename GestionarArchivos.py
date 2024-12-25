@@ -31,6 +31,23 @@ print(celsius_a_fahrenheit(25))
 
 1. Con las rutas relativas (caparta actual) yo puedo moverme a mis padres así: 
 
+proyecto/
+    main.py
+    paquete/
+        __init__.py
+        modulo1.py
+        subpaquete/
+            __init__.py
+            modulo2.py
 
+
+#  para llamar una funcion que este en modulo 1 en mi archivo modulo 2, debo hacer lo siguiente: (paquete/subpaquete/modulo2.py)
+from ..modulo1 import una_funcion 
+
+que es lo mimso que: 
+
+from proyecto/paquete/modulo1.py
+
+y así hasta el infinito, ... = tre padres, .... = cuatro padres, teninedo en cuenta la carpeta actual. 
 '''
 
