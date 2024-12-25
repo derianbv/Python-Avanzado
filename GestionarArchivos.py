@@ -49,5 +49,65 @@ que es lo mimso que:
 from proyecto/paquete/modulo1.py
 
 y así hasta el infinito, ... = tre padres, .... = cuatro padres, teninedo en cuenta la carpeta actual. 
+
+
+
+
+
+
+
+
+
+########################################## SYS #########################################################
+
+import sys 
+
+#Me da acceso a cosas internas del interpretador de python.
+
+por ejemplo, sys.path es una lista en dónde python busca modulos cuando se usa import:
+
+[
+    '/home/user/proyecto',          # Ruta actual del script
+    '/usr/lib/python3.11',          # Directorios estándar de Python
+    '/usr/lib/python3.11/lib-dynload',
+    '/home/user/.local/lib/python3.11/site-packages'
+]
+
+para agregar un lugar nuevo donde buscar: 
+
+sys.path.append('/home/user/mi_carpeta_personal')
+
+print(sys.executable) : esto saca cual es el interprete de python3 
 '''
+
+
+###################################### RUTAS ############################### 
+'''
+Absoluta y relativa. 
+
+1. Absoluta: 
+-No sirve para portabilidad, depende de cada sistema, hay librerias como OS para manejarlas. 
+Empieza desde la raíz del sistema operativo: 
+
+Window (Empieza desde C:\\): 
+ruta_absoluta = "C:\\Usuarios\\usuario\\proyecto\\archivo.txt"
+
+Linux (Empieza desde /): 
+ruta_absoluta = "/home/usuario/proyecto/archivo.txt"
+
+2. Relativa: 
+Siempre se está desde la carpeta actual. 
+
+/proyecto/
+    main.py
+    data/
+        archivo.txt
+
+Desde main.py, para acceder a archivo.txt la ruta_relativa es = "data/archivo.txt"
+'''
+
+
+
+
+
 
