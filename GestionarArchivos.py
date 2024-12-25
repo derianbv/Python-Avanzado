@@ -19,3 +19,8 @@ from .calculadora import sumar
 from .conversor import celsius_a_fahrenheit
 
 # Ahora puedo llamarlas en otro el archivo main.py: 
+
+from utils import sumar, celsius_a_fahrenheit
+
+print(sumar(3, 5))                   
+print(celsius_a_fahrenheit(25))      
