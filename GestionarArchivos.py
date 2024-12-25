@@ -1,7 +1,6 @@
-##########################################  RUTAS ############################################################
+##########################################  Paquetes ############################################################
 '''
-1. Ruta relativa (en relación con la carpeta actual) 
-Se basa en un sitema que se establece con la carpeta actual, es decir, para acceder a algo que este en la misma carpeta, por ejemplo: 
+PROYECTO ESTRUCTURA:
 
 proyecto/
     main.py
@@ -24,3 +23,14 @@ from utils import sumar, celsius_a_fahrenheit
 
 print(sumar(3, 5))                   
 print(celsius_a_fahrenheit(25))      
+
+
+######################################## MOVERSER POR CARPETA #########################################3
+
+############ Padres: 
+
+1. Con las rutas relativas (caparta actual) yo puedo moverme a mis padres así: 
+
+
+'''
+
