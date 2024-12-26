@@ -23,7 +23,7 @@ ZeroDivisionError: division by zero
 def division(a,b): 
   try: 
     return a/b 
-  except ZeroDivisionError: #Como hay error hace este bloque y no el de arriba, esta es una de los errores predeterminados de python 
+  except ZeroDivisionError: #Como hay error hace este bloque y no el de arriba, esta es una de los errores predeterminados de python, si pongo uno que no existe habrá error de suntaxis en el código 
     print('Eso está mal')
     return (ZeroDivisionError) 
   finally: #este es un codigo que le digo, hazte sí o si siempre con finally, así el except tenga un return 
@@ -50,3 +50,21 @@ def divide(a, b):
         raise ZeroDivisionError("division by zero, this is imposible")  # El raise sirve para prever errores de logica creando mi codigo, acá le setee, si alguien trata de poner un cero que el programa raise un error de una 
     return a / b
 
+
+############### Puedo ponerle un error personalizado al crearlo en la clase: -----------------------------------------------
+
+
+
+#Acá hago una clase que herede de Exception: 
+
+class DivisionPorCeroError(Exception):
+    """Excepción personalizada para manejar la división por cero."""
+    def __init__(self, message="El divisor no puede ser cero"):
+        self.message = message
+        super().__init__(self.message)
+
+# Función que utiliza la excepción personalizada
+def division(a, b): 
+    if b == 0:  # Verificamos el divisor
+        raise DivisionPorCeroError("¡Intentaste dividir entre cero!")  # Lanzamos el error personalizado
+    return a / b
