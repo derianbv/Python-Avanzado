@@ -136,6 +136,34 @@ response = requests.post(
 )
 
 
+################################# GET ##################################################3
+Sirve para pedirle cosas al server, entonces yo le paso unas cosas por parametros en la url como un diccionario,
+luego el server recibe estas solicitudes y debe crear un return que le devuelva los datos que el cx busque si sus datos coinciden con confirmaciones 
+en la lógica del backend. 
+
+Cliente:----------------------------------------------------------------------------------
+
+import requests #Sirve para hacer solicitudes a un server. 
+
+url = "http://localhost:5000/productos"
+params = {"categoria": "electronica"}
+
+response = requests.get(url, params=params) #Aca le hago una solicitud
+print(response.json()) 
+
+Servidor Flask:-----------------------------------------------------------------------------
+
+@app.route('/productos', methods=['GET'])
+def listar_productos():
+    categoria = request.args.get("categoria") #sirve para agarrar lo que envió el cx en una solicitud
+    productos = [
+        {"id": 1, "nombre": "Televisor", "categoria": "electronica"},
+        {"id": 2, "nombre": "Lavadora", "categoria": "electrodomesticos"}
+    ]
+    # Filtrar productos por categoría
+    filtrados = [p for p in productos if p["categoria"] == categoria]
+    return jsonify(filtrados)
+
 '''
 
 ############################################ OBJETOS TIPO RESPONSE ######################################################:
