@@ -102,7 +102,8 @@ from flask import request
 #Es request de flask y no request de la libreria requests 
 @app.route('/')
 def search_response():
-    query = request.args.get("q") #Esta linea agarra los parametros enviados por la url, en este caso busca
+    query = request.args.get("q") #Esta linea agarra los parametros enviados por la url, en este caso busca SE USA PARA RECIBIR LOS DATOS QUE UN CUSTOMER PODRÍA ENVIAR, NO PARA ENVIAR NINGUNA
+    #SOLICITUD AL SERVER, PORQUE EN ESTE CASO, YO SOY EL SERVER. 
     # a "q", ejemplo youtube.com/?q="hola", entonces query guardará a "hola" en un diccionario, si no hay devuelve none
 
     if not query: #es como decir if !query, o, si query es falso: 
