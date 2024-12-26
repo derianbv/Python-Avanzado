@@ -226,3 +226,22 @@ print(ord("h"))
 
 ## dir(objeto):
 #imprime todo lo que un objeto tenga por dentro
+
+
+
+
+########################## Keywords ############################################################
+
+
+# 1. Se puede definir una función con parámetros predeterminados--------------------------------------
+
+def saludar(nombre, saludo="Hola"):
+    return f"{saludo}, {nombre}!"
+
+# Llamada con argumentos posicionales
+print(saludar("Juan"))  # Output: Hola, Juan!
+
+#---------------------------------------------------------------------------------------------
+
+# 3.  definir las variables que tendrá la función durante su ejecucion en los parámetros, estas variables solo viven en la función. 
+print(saludar(nombre="Ana", saludo="Buenas tardes")) # Output: Buenas tardes, Ana!
