@@ -148,14 +148,18 @@ import requests #Sirve para hacer solicitudes a un server.
 url = "http://localhost:5000/productos"
 params = {"categoria": "electronica"}
 
-response = requests.get(url, params=params) #Aca le hago una solicitud
+response = requests.get(url, params=params) #Aca le hago una solicitud de que el server trigueree la funcion GET que tenga seteada para esta url, sea cual sea.
+#get() recibe como parametro params que es basicamente pasar datos por url que el server puede luego recuperar y verificar, si todo es exitoso con estos datos, me 
+#deberia dar una respuesta.
+
 print(response.json()) 
 
 Servidor Flask:-----------------------------------------------------------------------------
 
 @app.route('/productos', methods=['GET'])
 def listar_productos():
-    categoria = request.args.get("categoria") #sirve para agarrar lo que envió el cx en una solicitud
+    categoria = request.args.get("categoria") #sirve para agarrar lo que envió el cx en una solicitud, get es porque es un diccionario y estoy agarrando el valor de la 
+    #llave categoria.
     productos = [
         {"id": 1, "nombre": "Televisor", "categoria": "electronica"},
         {"id": 2, "nombre": "Lavadora", "categoria": "electrodomesticos"}
