@@ -114,7 +114,21 @@ respuesta.header = metadatos de la pagina.
 Hay dos tipos de API: REST y SOAP
 
 
+############################### HTTP REQUESTS #################################
 
+Diferencia entre GET y POST
+
+GET:
+
+Se utiliza para recuperar datos del servidor.
+Es una solicitud idempotente: no debe modificar datos en el servidor.
+Se usa cuando el usuario simplemente quiere ver información (por ejemplo, listar cursos).
+
+
+POST:
+
+Se utiliza para enviar datos al servidor y realizar cambios, como actualizar o crear datos.
+No es idempotente: cada vez que haces una solicitud POST, puede cambiar algo (en este caso, aumentar el contador un inscripciones).
 
 
 
