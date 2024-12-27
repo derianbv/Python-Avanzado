@@ -118,14 +118,14 @@ Hay dos tipos de API: REST y SOAP
 
 Diferencia entre GET y POST
 
-GET:
+GET: SOLO DE VISITA
 
 Se utiliza para recuperar datos del servidor.
 Es una solicitud idempotente: no debe modificar datos en el servidor.
 Se usa cuando el usuario simplemente quiere ver información (por ejemplo, listar cursos).
 
 
-POST:
+POST: ALTERAR AL SERVER, PASARLE COSAS O CAMBIAR LOGICA 
 
 Se utiliza para enviar datos al servidor y realizar cambios, como actualizar o crear datos.
 No es idempotente: cada vez que haces una solicitud POST, puede cambiar algo (en este caso, aumentar el contador un inscripciones).
