@@ -1,7 +1,7 @@
 ################################# Kwards ############################################### :p 
 '''
---------------------------------Tipos de parámetros------------:
-
+--------------------------------Tipos de parámetros para paserla a una f(x) ---------------------------------
+Se definen por la manera en la que se pasan en la función al momento de invocarla
 
 
 Tipo de Parámetro	      | Ejemplo de Definición	|  Ejemplo de Llamada
@@ -16,3 +16,10 @@ Tipo de Parámetro	      | Ejemplo de Definición	|  Ejemplo de Llamada
 
 
 1. posicional: importa el orden, en def func(a, b) si le paso func(1, 2) entonces a=1, b=2 
+2. Con nombre: no importa el orde en que se pasen ya que se definen por su nombre, como el caso de arriba func(b=2,a=1), acá le paso los datos al contario pero python es capas de saber a cual me refiero por el nombre.
+3. Con valor por defecto: Puedo setear valores por defecto en las funciones, si ese dato no se lo paso no da error porque ya tiene un por defecto: def func(a, b=10) es valido llamarla con: func(1) o func(1, 20)
+4. Posicional solamente: con "/" todos los parametros que están antes solo pueden ser pasados posicionalmente al llamar la función, es decir que si se pone func(a=3) esto dará error. 
+5. Con nombre solamente:	 con "*" todos los parametros que están después solo pueden ser pasados con su nombre al llamar la función, es decir que si se pone func(3) esto dará error, tiene que ser func(a=3)
+6. Posicionales variables:  
+
+'''
