@@ -36,6 +36,28 @@ suma(4,4,4,4,4,4)
 #(4, 4, 4, 4, 4, 4)
 #24
 
+'''
+7. Con nombre variables: seteando la func con f(**platano) voy a agarrar UNICAMENTE todos los parametros con nombre y los guardaré en diccionario llamado platano
+Ejemplo:
+'''
 
-7. Con nombre variables: setenndo la func con f(**platano) voy a ca
+def crearDiccPersona(**platano): 
+  print(platano) 
+
+
+crearDiccPersona(nombre='Santi', caco=True)
+#OUT:
+#{'nombre': 'Santi', 'caco': True}
+
+crearDiccPersona(nombre='derian', estudiante=True, notas=(4.5,5), edad=22 )
+#{'nombre': 'derian', 'estudiante': True, 'notas': (4.5, 5), 'edad': 22}
+
+
+#Finalmente, estos dos se pueden combinar: 
+
+def crearTuplaDicc(primerParam, *posicionales,**nombrados):
+  print(f'soy el primer parametro: {primerParam}')
+  print(f'Somos todos los otros parametros que van después: {posicionales}')
+  print(f'Soy un diccionario con las var nombradas: {nombrados}')
+crearTuplaDicc('gato', 3, 'dia', False, None, mama='feliz', año=2024)
 
