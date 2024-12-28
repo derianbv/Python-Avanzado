@@ -56,8 +56,19 @@ crearDiccPersona(nombre='derian', estudiante=True, notas=(4.5,5), edad=22 )
 #Finalmente, estos dos se pueden combinar: 
 
 def crearTuplaDicc(primerParam, *posicionales,**nombrados):
-  print(f'soy el primer parametro: {primerParam}')
-  print(f'Somos todos los otros parametros que van después: {posicionales}')
-  print(f'Soy un diccionario con las var nombradas: {nombrados}')
+  print(f'-soy el primer parametro: {primerParam}')
+  print(f'-Somos todos los otros parametros que van después: {posicionales}')
+  print(f'-Soy un diccionario con las var nombradas: {nombrados}')
+
+
 crearTuplaDicc('gato', 3, 'dia', False, None, mama='feliz', año=2024)
+#PRIMERO LOS POSICIONALES Y LUEGO LOS NOMBRADOS O EXPLOTA!! SyntaxError: positional argument follows keyword argument
+
+'''
+OUT: 
+-Soy el primer parametro: gato
+-Somos todos los otros parametros que van después: (3, 'dia', False, None)
+-Soy un diccionario con las var nombradas: {'mama': 'feliz', 'año': 2024}
+
+'''
 
