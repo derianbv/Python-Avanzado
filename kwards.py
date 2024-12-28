@@ -20,6 +20,22 @@ Tipo de Parámetro	      | Ejemplo de Definición	|  Ejemplo de Llamada
 3. Con valor por defecto: Puedo setear valores por defecto en las funciones, si ese dato no se lo paso no da error porque ya tiene un por defecto: def func(a, b=10) es valido llamarla con: func(1) o func(1, 20)
 4. Posicional solamente: con "/" todos los parametros que están antes solo pueden ser pasados posicionalmente al llamar la función, es decir que si se pone func(a=3) esto dará error. 
 5. Con nombre solamente:	 con "*" todos los parametros que están después solo pueden ser pasados con su nombre al llamar la función, es decir que si se pone func(3) esto dará error, tiene que ser func(a=3)
-6. Posicionales variables:  
-
+6. Posicionales variables:  seteando la func con f(*palbraLaQueSea), !!!exclusivamente un "*" le digo que me reciba parametros posicionales UNICAMENTE, no parametros de nombre, y los guardará dentro de la función
+en una tupla llamada palabraLaQueSea, sin el *.
+Ejemplo: 
 '''
+def suma(*numeros): 
+  print(numeros)
+  print(sum(numeros))
+#----------------------------
+suma(1,2) 
+#OUT:
+#(1, 2)
+#3
+suma(4,4,4,4,4,4) 
+#(4, 4, 4, 4, 4, 4)
+#24
+
+
+7. Con nombre variables: setenndo la func con f(**platano) voy a ca
+
