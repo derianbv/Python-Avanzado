@@ -15,7 +15,7 @@ Meta info
 ---------Response body---------------------------- BODY 
 El archivo o mercancía que estaba pidiendo
 
-Get: le pido el HTML.index de la pagina. 
+Get: le pido el HTML.index de la pagina.  
 Server me responde con OK 200 y me manda el HTML en el body del mensaje http
 
 
