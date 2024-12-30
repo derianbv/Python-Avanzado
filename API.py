@@ -43,7 +43,7 @@ Content-Type	Indica el tipo de contenido enviado (como application/json o text/h
 User-Agent	Identifica al cliente que realiza la solicitud (por ejemplo, navegador, aplicación).
 Accept	Indica los tipos de contenido que el cliente puede procesar (application/json, text/html).
 Authorization	Proporciona credenciales para autenticación (como tokens o credenciales básicas).
-Cache-Control	Controla el comportamiento de almacenamiento en caché.
+Cache-Control	Controla el comportamiento de almacenamiento en caché. 
 Content-Length	Indica la longitud del cuerpo de la solicitud en bytes.
 Cookie	Envia cookies al servidor para mantener sesiones o preferencias del usuario.
 Referer	Indica la URL desde la que se realizó la solicitud.
