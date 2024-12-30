@@ -9,7 +9,7 @@ Los mensajes HTTP contienen:
 
 --------Response Start Line ------------------------ 
 El CÓDIGO  de la request, lo qué le pido y para el server: 
-el resultado de la request OK or FAIL 
+el resultado de la request OK or FAIL  
 -----------Responde Header------------------------ HEAD
 Meta info 
 ---------Response body---------------------------- BODY 
