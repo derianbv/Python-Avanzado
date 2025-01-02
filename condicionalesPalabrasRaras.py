@@ -1,4 +1,6 @@
 
+
+
 ################################## Condicionales ################################################
 
 ###################### is ###########################
@@ -115,3 +117,121 @@ class MiClase:
 
 obj = MiClase()
 obj.metodo_realizado()  # Imprime: Este método ya está implementado
+
+
+
+
+###################### del ######################################## 
+#Borra a apuntadore (variables) de objetos en memoria, si ya no hay más apuntadores a dicho objeto el recolector de basura borra dicha memoria. 
+
+
+1 Ejemplo. #borrar un atributo de una clase
+
+class MiClase:
+    def __init__(self):
+        self.atributo = "valor"
+
+obj = MiClase()
+print(obj.atributo)  # Imprime: valor
+
+del obj.atributo  # Elimina el atributo "atributo"
+# print(obj.atributo)  # AttributeError: 'MiClase' object has no attribute 'atributo'
+
+#---------------------------------
+
+
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+del mi_diccionario['b']  # Elimina la clave 'b'
+print(mi_diccionario)  # {'a': 1, 'c': 3}
+
+
+#-------------------------------------
+
+mi_lista = [1, 2, 3, 4, 5]
+del mi_lista[1:3]  # Elimina los elementos en los índices 1 y 2 (2 y 3)
+print(mi_lista)  # [1, 4, 5]
+
+
+#-------------------------------------
+
+x = 10
+print(x)  # Imprime: 10
+
+del x  # Elimina la variable x
+
+# print(x)  # NameError: name 'x' is not defined
+
+
+
+
+
+
+
+############################### Asserts ######################################
+#Más que todo para pruebas de código, se usa para hacer que se dispare un mensaje si el comparativo no es verdadero:
+assert <condición>, <mensaje opcional>
+
+
+#Ejemplos: 
+
+x = 10
+assert x > 5  # No pasa nada porque la condición es verdadera
+assert x < 5, "x no es menor que 5"  # Lanza AssertionError con el mensaje
+#OUT: AssertionError: x no es menor que 5
+
+
+#---------------------------------------------
+
+def dividir(a, b):
+    assert b != 0, "El divisor no puede ser cero"
+    return a / b
+
+print(dividir(10, 2))  # 5.0
+print(dividir(10, 0))  # AssertionError: El divisor no puede ser cero
+
+
+
+#################################################### yield #################################################
+
+'''
+#EPP: AHORRA MEMORIA
+#Crea una función Generadora, ahorra memoria al ir solo creando lo que necesito, a diferencia de una lista que se debe guardar de una en la memorai: 
+
+
+Cuando usas yield, la función no pierde su estado entre llamadas como lo haría con un return. En lugar de ejecutarse desde el principio cada vez que se invoca, una función con yield se pausa en el último yield y recuerda:
+
+-Dónde estaba en el código (la posición exacta después del último yield).
+-Los valores de las variables locales (su "estado interno").
+Esto es posible gracias al objeto generador que crea yield. Este objeto lleva el control de lo que ya se ha generado y de lo que queda por generar.
+'''
+
+def contador():
+    n = 1
+    while n <= 3:
+        yield n
+        n += 1
+
+gen = contador()  # Crea el generador
+print(next(gen))  # 1 (se pausa en `yield n`)
+print(next(gen))  # 2 (continúa desde `n += 1`)
+print(next(gen))  # 3 (continúa y se pausa nuevamente)
+# print(next(gen))  # StopIteration (ya no hay más valores)
+
+
+#------------ numeros infinitos:
+
+def numeros_infinito():
+    n = 0
+    while True:
+        yield n
+        n += 1
+
+gen = numeros_infinito()
+print(next(gen))  # 0
+print(next(gen))  # 1
+
+#Con una lista, esto sería imposible porque necesitarías almacenamiento infinito.
+
+
+
+
