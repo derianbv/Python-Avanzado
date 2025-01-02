@@ -30,7 +30,7 @@ obj3 = MyClass()
 print(obj1 is obj2)  # True: Mismo objeto
 print(obj1 is obj3)  # False: Diferentes instancias
 
-########## Diferencia con ==: 
+########## Diferencia con ==: --------------------------------------
 
 a = [1, 2, 3]
 b = [1, 2, 3]  # b es un objeto diferente con el mismo contenido
@@ -38,4 +38,9 @@ b = [1, 2, 3]  # b es un objeto diferente con el mismo contenido
 print(a is b)  # False: No son el mismo objeto
 print(a == b)  # True: Los valores son iguales
 
-s
+################## igual para la negación: ---------------------------
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a is not b)  # True: No son el mismo objeto en memoria
+print(a != b)      # False: Sus valores son iguales
