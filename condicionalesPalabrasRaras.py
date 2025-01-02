@@ -104,3 +104,14 @@ Elemento pendiente
 Elemento: 4
 Elemento: 5
 '''
+####### Placeholder para indicat que hay que hacerlo después: 
+
+class MiClase:
+    def metodo_pendiente(self):
+        ...  # Indicativo de implementación futura
+
+    def metodo_realizado(self):
+        print("Este método ya está implementado")
+
+obj = MiClase()
+obj.metodo_realizado()  # Imprime: Este método ya está implementado
