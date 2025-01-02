@@ -233,5 +233,39 @@ print(next(gen))  # 1
 #Con una lista, esto sería imposible porque necesitarías almacenamiento infinito.
 
 
+############################################ Global - non Local ##############################3
+
+# 1. Global, llama a variables por fuera de un contexto: 
+
+x = 10
+def cambiar():
+    global x
+    x = 20
+
+cambiar()
+print(x)  # 20
+
+#------------ también puede crear variables por fuera de una función sin return: 
+
+def crear_global():
+    global nueva_var  # Declaramos una nueva variable global
+    nueva_var = "Soy global"
+
+crear_global()
+print(nueva_var)  # "Soy global"
 
 
+# 2. nonlocal llama a una variable que este en el contexto de una función padre: 
+
+
+def funcion_externa():
+    x = 10  # Variable del ámbito de `funcion_externa`
+
+    def funcion_interna():
+        nonlocal x  # Declaramos que queremos modificar `x` del ámbito externo
+        x = 20  # Modificamos `x`
+
+    funcion_interna()
+    print(x)  # 20
+
+funcion_externa()
