@@ -1,3 +1,4 @@
+
 ################################## Condicionales ################################################
 
 ###################### is ###########################
@@ -78,3 +79,28 @@ user = User(username="testuser")
 
 # Verificar si `user` es una instancia del modelo `User`
 print(isinstance(user, User))  # True
+
+
+
+
+
+##################################### Ellipsis ######################################################
+
+# Es un objeto y puede ser evaluable (diferente a pass que no puede ser evaluable (Ej: print(pass) = error, print(...) = Ellipsis), pass solo se puede usar en condicionales o bucles: 
+# EPP: Es un placeholder que busca mostrar que el objeto está pendiente: 
+
+estructura = [1, 2, ..., 4, 5]
+
+for elemento in estructura:
+    if elemento is ...:
+        print("Elemento pendiente")
+    else:
+        print(f"Elemento: {elemento}")
+
+'''
+Elemento: 1
+Elemento: 2
+Elemento pendiente
+Elemento: 4
+Elemento: 5
+'''
