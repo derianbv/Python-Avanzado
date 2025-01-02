@@ -44,3 +44,37 @@ a = [1, 2, 3]
 b = [1, 2, 3]
 print(a is not b)  # True: No son el mismo objeto en memoria
 print(a != b)      # False: Sus valores son iguales
+
+
+
+#################################################### with ######################################################:
+#Cierra el archivo automáticamente:
+
+with open('archivo.txt', 'r') as archivo:
+    contenido = archivo.read()
+# No necesitas cerrar el archivo manualmente
+
+
+#################################################### and or in not ######################################################:
+a = 0
+b = 5
+print(a and b)  # 0: `and` retorna el primer valor "falso".
+print(a or b)   # 5: `or` retorna el primer valor "verdadero".
+print(not a)    # True: `not` invierte la verdad lógica.
+
+
+##################################### verificar el tipo de dato de una variable ###################################3
+
+x = 42
+print(isinstance(x, int))  # True: x es un entero
+print(isinstance(x, str))  # False: x no es una cadena
+
+#También se puede con clases (o modelos de django): 
+
+from django.contrib.auth.models import User
+
+# Crear un usuario (simulación)
+user = User(username="testuser")
+
+# Verificar si `user` es una instancia del modelo `User`
+print(isinstance(user, User))  # True
