@@ -64,3 +64,74 @@
         deactivate                   ← desactiva
 
 Con esto tendrás entornos limpios, reproductibles y sin “dependency hell”.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║   ¿QUÉ PASA CON MI VENV CUANDO SUBO EL PROYECTO A GITHUB?        ║
+╚══════════════════════════════════════════════════════════════════╝
+
+1.  ¿SE SUBE REALMENTE LA CARPETA `.venv/`?
+        •   **No debería**. La buena práctica es añadirla a tu
+            `.gitignore`, por lo que:
+                -   El resto del equipo **no verá** tu venv en el
+                    repositorio remoto.
+                -   Se evita cargar cientos de megas de binarios
+                    y dependencias compiladas.
+
+2.  ¿QUÉ VERÁN LOS DEMÁS COLABORADORES?
+        •   Verán tu código fuente, tu `requirements.txt`
+            (o `pyproject.toml`) y el `.gitignore` que excluye `.venv/`.
+        •   No tendrán tus paquetes instalados localmente.
+
+3.  ¿QUÉ DEBEN HACER LOS COLABORADORES AL CLONAR?
+        Paso estándar por consola:
+
+            git clone https://github.com/usuario/proyecto.git
+            cd proyecto
+            python3 -m venv .venv
+            source .venv/bin/activate      # Windows: .venv\Scripts\activate
+            pip install -r requirements.txt
+
+        •   Cada persona crea **su propio** entorno virtual,
+            independiente y aislado.
+        •   Con `pip install -r requirements.txt` reproducen tu
+            lista de dependencias.
+
+4.  ¿CÓMO SE ACTUALIZA `requirements.txt`?
+        •   Cuando alguien instale o actualice librerías en
+            su venv, debe correr:
+
+            pip freeze > requirements.txt
+            git commit -am "Actualiza dependencias"
+            git push
+
+        •   Así, el equipo mantiene sincronizada la lista oficial.
+
+5.  PUNTOS CLAVE A RECORDAR
+        •   `.venv/` permanece local → se ignora en Git.
+        •   Cada colaborador crea y activa **su** venv.
+        •   `requirements.txt` es el contrato de dependencias.
+        •   Nunca uses `sudo pip install …` dentro del repo; siempre
+            instala dentro del venv activo.
+
+╔═════════════════════════════╗
+║  FLUJO RÁPIDO PARA TODOS    ║
+╚═════════════════════════════╝
+        # Clonar
+        git clone <url>
+        cd proyecto
+
+        # Crear y activar entorno
+        python -m venv .venv
+        source .venv/bin/activate   # ó .venv\Scripts\activate
+
+        # Instalar dep’s del proyecto
+        pip install -r requirements.txt
+
+        # Trabajar normalmente…
+        python main.py
+```
+
