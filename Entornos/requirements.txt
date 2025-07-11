@@ -1,0 +1,58 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        GENERAR requirements.txt AUTOMÁTICO CON **pipreqs**       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+1.  ¿QUÉ ES PIPREQS?
+    pipreqs analiza tu código fuente, detecta los módulos que IMPORTAS
+    y crea un `requirements.txt` solo con esos paquetes (y sus versiones
+    mínimas), en lugar de listar todo el entorno como hace `pip freeze`.
+
+2.  INSTALACIÓN
+        pip install pipreqs
+
+3.  USO BÁSICO (en la raíz del proyecto)
+        # crea o sobreescribe requirements.txt
+        pipreqs . --force
+
+    Opciones útiles:
+        --encoding=utf-8      ← especifica la codificación de archivos
+        --ignore=.venv,tests  ← ignora carpetas al escanear
+        --savepath=foo.txt    ← escribe en otro archivo
+
+4.  FLUJO RECOMENDADO
+        # 1) Crea tu venv (opcional, pero buena práctica)
+        python -m venv .venv
+        source .venv/bin/activate
+
+        # 2) Instala las librerías que uses
+        pip install PyQt5 customtkinter pandas
+
+        # 3) Genera requirements.txt con pipreqs
+        pipreqs . --force
+
+        # 4) Añade al repo
+        git add requirements.txt
+        git commit -m "Genera requirements.txt con pipreqs"
+        git push
+
+5.  DIFERENCIAS CON `pip freeze`
+    pip freeze  → lista TODO lo que hay en el entorno virtual,
+                   incluso libs instaladas para pruebas o por error.
+    pipreqs     → solo lo necesario según tus `import ...` reales.
+
+    Tip práctico:
+        •   Para proyectos chicos o rápidos, `pip freeze` basta.
+        •   Para libs/ejecutables que dependan de pocas librerías,
+            pipreqs mantiene el archivo ligero y limpio.
+
+╔═════════════════════════════╗
+║  COMANDOS RÁPIDOS           ║
+╚═════════════════════════════╝
+        # instalar
+        pip install pipreqs
+
+        # generar / sobreescribir requirements.txt
+        pipreqs . --force
+
+        # ignorar carpetas
+        pipreqs . --force --ignore .venv,docs,tests
