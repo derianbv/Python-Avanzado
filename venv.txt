@@ -1,0 +1,66 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                 ¿QUÉ ES UN VENV Y POR QUÉ USARLO?                ║
+╚══════════════════════════════════════════════════════════════════╝
+
+1.  ¿QUÉ ES?
+    Un *virtual environment* (venv) es simplemente una carpeta dentro de tu
+    proyecto que contiene:
+        •   una copia ligera del intérprete de Python;
+        •   su propio directorio de paquetes (*site-packages*);
+        •   scripts de activación/desactivación.
+
+    Todo lo instalado con `pip` mientras el venv está activo vive **solo**
+    en esa carpeta. Así evitas mezclar dependencias con otros proyectos
+    o con el Python global del sistema.
+
+2.  ¿POR QUÉ ES ÚTIL?
+        •   Aislamiento total de versiones: cada proyecto maneja sus
+            librerías sin afectar a los demás.
+        •   Reproducible: basta compartir `requirements.txt` para que
+            cualquiera replique el entorno exacto.
+        •   Sin privilegios de superusuario: todo queda en tu home.
+        •   Limpieza sencilla: borrar la carpeta ■ adiós entorno.
+
+3.  CÓMO CREARLO Y USARLO
+    (ejemplo en Linux/macOS/WSL; en Windows cambia `source` por
+    `venv\Scripts\activate`)
+
+        # 1) Crear la carpeta
+        python3 -m venv .venv
+
+        # 2) Activar cada vez que trabajes
+        source .venv/bin/activate
+
+        # 3) Instalar paquetes
+        pip install PyQt5 matplotlib pandas
+
+        # 4) Guardar la lista exacta de deps
+        pip freeze > requirements.txt
+
+        # 5) Desactivar cuando termines
+        deactivate
+
+4.  ¿Y SI YA EMPECÉ SIN VENV?
+        •   Crea ahora `.venv` como arriba.
+        •   Actívalo.
+        •   Reinstala en él los paquetes que tu proyecto necesita
+            (puedes copiarlos de `pip freeze` del entorno global).
+        •   A partir de entonces, trabaja siempre con el venv activo.
+
+5.  BUENAS PRÁCTICAS RÁPIDAS
+        •   Un venv por proyecto.
+        •   Añádelo a `.gitignore`.
+        •   Usa siempre el mismo `python`/`pip` tras activar.
+        •   Comparte `requirements.txt` (o `pyproject.toml` si usas Poetry).
+
+╔═════════════════════════════╗
+║  COMANDOS DE REFERENCIA     ║
+╚═════════════════════════════╝
+        python3 -m venv .venv        ← crea venv
+        source .venv/bin/activate    ← activa (Linux/macOS/WSL)
+        .venv\Scripts\activate       ← activa (Windows)
+        pip install paquete          ← instala en el venv activo
+        pip freeze > requirements.txt← congela deps
+        deactivate                   ← desactiva
+
+Con esto tendrás entornos limpios, reproductibles y sin “dependency hell”.
