@@ -1,8 +1,14 @@
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+# 1 · Crear el entorno virtual (asegúrate de estar en la raíz del proyecto)
+python3 -m venv .venv          # usa python3 en lugar de python
 
+# Si te dice “No module named venv…”
+# instala primero el paquete de sistema (solo una vez):
+#   sudo apt update
+#   sudo apt install python3-venv
 
+# 2 · Activar el entorno
+source .venv/bin/activate      # ahora sí existe la ruta
+# en Windows PowerShell sería: .venv\Scripts\Activate.ps1
 
 ---------------------------------------------------------------------------------------
 ╔══════════════════════════════════════════════════════════════════╗
