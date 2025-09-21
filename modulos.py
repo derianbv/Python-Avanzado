@@ -14,3 +14,11 @@ import request
   archivo python  
 
   '''
+
+'''
+Con CLI  de Bash: 
+
+" python3 (se usa python3 y no python porque python solo es 2.algo) -m pip install ...
+Entonces, lo que sucede acá es que con -m python3 va a su propia carpeta de modulos y ejecuta pip, sino, buscaría pip en el OS y ejecuta la primera que encuentre (puede ser inesperado). 
+
+'''
