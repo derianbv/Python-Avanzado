@@ -64,6 +64,8 @@ print(list(map((lambda x: x+1), lista)))
 
 
 ######################### Sorted() ########################################
+#Esto devuelve un nuevo objeto ordeando, diferente a .sort() que ordena en moemoria. 
+
 
 #parámetros:
 #sorted(iterable, key=callable, reverse=True)
