@@ -11,3 +11,62 @@ print(list(enumerate(a)))
 [(0, 1), (1, 2), (2, 3), (3, 4)]  #Devuelve tuplas con el orden de cada elemento. 
 
 ** Process exited - Return Code: 0 **
+
+
+------------------ Not bad Nested Loops (N*M) and not (N^2)  ------------------------------- 
+
+     
+        
+        class Solution:
+            def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+                res = defaultdict(list) 
+                for s in strs:             //N ops. 
+                    count = [0] * 26 
+                    for c in s:           // M ops. 
+                        count[ord(c) - ord('a')] += 1       //relative to "a" 
+                    res[tuple(count)].append(s)
+                return list(res.values())
+        
+        //explicación: for each word (N words) it creates a vector of 26 positions that are the possible letters of the abecedary the position for each
+        is relative to the first elemente a. Then, for each M letter of each N word it sums one to that letter and then passes the complete 26 list (using a tuple for python accepting it as non-mutable)
+        as a key to the hashT, then it assings the N word to that key. The main thing here is that for words that are the same, the 26 list as key will be the same so the word will be added to the 
+        same key. 
+        
+        
+        ----How to spot a not bad nested loop (N*M) and not (N^2): 
+        Nested loops are problematic when:
+        
+        BAD - They create dependencies between N elements:
+        for i in range(n):
+            for j in range(n):  # Each element compared with ALL others
+                if arr[i] == arr[j]:
+                    # ...
+        This is O(N^2)
+        
+        BAD - The inner loop grows with input:
+         /// Here we can see a reaallyyy bad comparison between elements: 
+        
+        
+        for word1 in words:        # N words
+            for word2 in words:    # N words again
+                if areAnagrams(word1, word2):
+                    # ...
+        
+        GOOD - Inner loop is independent and constant:
+        for word in words:     # N words
+            for char in word:  # M characters (fixed per word)
+                count[ord(char) - ord('a')] += 1
+        This is O(N × M) - GOOD
+        
+        Key points:
+        - M doesn't depend on N
+        - M is typically small (words rarely >20-30 chars)
+        - No comparisons between elements //avoid that. 
+        
+        Analogy:
+        Bad: "For each person, talk to all other persons" = N^2 conversations
+        Good: "For each person, check their 10 fingers" = N × 10 operations (M: 10) 
+        
+        
+        Rule: Avoid nested loops when both depend on input size, OK when one is constant/small.
+        
