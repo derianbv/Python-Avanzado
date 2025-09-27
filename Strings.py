@@ -55,3 +55,16 @@ if match:
     print("Phone number found:", match.group())
 else:
     print("No match")
+
+############################################ Join ###########################################################
+
+lista = ["1","2","3"]
+print("".join(lista))
+#OUT: 123
+
+
+lista = ["1","2","3"]
+print("--------".join(lista))
+#1--------2--------3
+
+Básicamente, pega elementos de una lista (tienen que ser strings estos elementos sí o sí) y los separa por lo que haya en "".join
