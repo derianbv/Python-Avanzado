@@ -53,6 +53,19 @@ dic['casa'] = 'Calle 146'
 print(dic['casa'])
 #Calle 146
 
+####################### default dict ##################################################
+
+from collections import defaultdict
+
+res = defaultdict(list)
+res['nueva_clave'].append('valor')  # ✅ Funciona perfectamente
+
+
+#Esto sirve para que en elemento nuevo que creemos en un diccionario se ponga automáticamente el valor que pasemos en defaultdict(list)
+
+
+
+
 
 
 ########## Agregar al diccionario ###########:
