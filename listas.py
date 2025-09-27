@@ -139,8 +139,7 @@ print(palabras.index("soy", 2, 5))
 
 
 #4. lista.append(x): mete lo que sea que es x al final de la lista. Retorna None
-
-
+# Cuidado con este metodo, este no devuelve la lista con el elemento extra, solo devuelve NONE. 
 
 
 #5. lista.extend(iterable): puede pegar dos listas: 
