@@ -53,6 +53,20 @@ dic['casa'] = 'Calle 146'
 print(dic['casa'])
 #Calle 146
 
+#en python hacer dic['jose'] no es igual a dic.get('jose')? 
+#No, dic['jose'] y dic.get('jose') no son iguales en Python.
+
+#Diferencias principales
+dic['jose']:
+#Accede directamente a la clave 'jose'.
+#Si la clave no existe, lanza un KeyError.
+
+dic.get('jose'):
+#Intenta obtener el valor de la clave 'jose'.
+#Si la clave no existe, devuelve None (o un valor por defecto si se pasa como segundo argumento).
+#No lanza excepción.
+
+
 ####################### default dict ##################################################
 
 from collections import defaultdict
