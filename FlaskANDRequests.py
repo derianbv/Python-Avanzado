@@ -92,7 +92,7 @@ def get_author(isbn): #hay que pasarle la var dinámica
 
 
 
-##################### ERRORES #######################################
+##################### ERRORES AND QUERIES #######################################
 '''
 Puedo setear como manejar los errores de mi código
 Miremos este ejemplo: 
@@ -163,6 +163,14 @@ Connection: close
 
 {"message":"Resource777"}
 #La respuesta de if resource
+
+
+Los datos que se pasan por URL pueden ser dados porque alguien los escribio directamente en la url o el html tiene un forms con el método Get.
+
+<form action="/buscar" method="get">
+  <input type="text" name="q">
+  <button type="submit">Buscar</button>
+</form>
 
 
 '''
