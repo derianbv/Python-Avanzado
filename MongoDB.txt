@@ -8,3 +8,16 @@ Son basicamente carpetas para agrupar documentos que estan relacionadas
 **** Cursor *****
 Cada que hago consultas a la db como:     result = client.tododb.todo.find({"priority": priority}), me devuelve un cursor que es como un puntero que apunta a 
 los datos encontrados, es un iterable entonces puedo recorrerlo.  EPP: una lista con los resultados encontrados
+
+
+**** Cliente ****
+Tipo de objeto encargado de realizar la connección con la base de datos, se puede usar una librería que gestione esto: 
+
+"
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://user:pass@host:27017/")
+db = client.mibase
+coleccion = db.micoleccion
+
+"
