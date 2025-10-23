@@ -1,0 +1,2 @@
+Son DB basadas en documentos. 
+Internamente MongoDB maneja documentos tipo JSONs. 
