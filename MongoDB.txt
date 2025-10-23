@@ -1,2 +1,6 @@
 Son DB basadas en documentos. 
 Internamente MongoDB maneja documentos tipo JSONs. 
+
+------------------------------- PARTES ------------------------------------------
+**** Collections ****
+Son basicamente carpetas para agrupar documentos que estan relacionadas
