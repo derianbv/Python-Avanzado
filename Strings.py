@@ -13,6 +13,13 @@ print(str1[-9])
 
 # Ver más de esto en slicing.py 
 
+######: Formatear  -------------------------------------------------------------------------------------
+
+MongoClient('mongodb://%s:%s@127.0.0.1' % ('mongouser', 'password')) 
+#Acá tenemos un string que tiene dos wild cards que cambiamos con %,
+#eso es quivalente a: 
+
+MongoClient('mongodb://{}:{}@127.0.0.1'.format('mongouser', 'password'))
 
 ######:  Scape sequences (\): -------------------------------------------------------------------------------------
 
