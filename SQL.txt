@@ -1,1 +1,55 @@
 
+
+https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+#Explicación sencilla de un SQL: ------------------------------------------------------------------------------------------------------------------------------------- 
+
+
+El SQL que vamos a explicar viene de un ejemplo de una app de DJANGO : 
+
+"SELECT channel, direction, COUNT(channel) as count FROM app_interactions GROUP BY channel, direction;"
+
+
+**** Paso *****: 
+
+0. Todo lo que hace el procesador de consultas de la base de datos lo hace en la memoria RAM, no cambia las estructuras internas mientras procesa: 
+
+Así se físicamente en una base de datos. 
+
+ID,channel,direction
+1,Email,Entrante
+2,SMS,Saliente
+3,Email,Entrante
+4,SMS,Saliente
+
+1. FROM app_interactions: 
+El procesador copia los datos que encuentra físicamente en la memoria RAM, este es el primer paso en una instrucción SQL así se escriba al final. 
+
+2. GROUP BY channel, direction:
+
+El procesador agrupa las instancias que sean similares, NO LAS SUMA, NO HACE NADA MÁS QUE PONER LAS QUE SEAN PARECIDAS IGUALES. Esto lo hace literal iterando entrada a entrada. 
+
+
+ID,channel,direction
+1,Email,Entrante
+2,SMS,Saliente
+3,Email,Entrante
+4,SMS,Saliente
+
+PASA A: 
+
+ID,channel,direction
+1,Email,Entrante
+3,Email,Entrante
+2,SMS,Saliente
+4,SMS,Saliente
+
+
+Lo hace usando un hash con key de la combinacion tupla (channel, direction), ---> valor, si no esta lo suma, si esta entonces suma uno. Que es lo que pasa en Count
+
+
+
+
+
+
