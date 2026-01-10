@@ -54,7 +54,52 @@ SELECT channel, direction, COUNT(channel)
 
 ------------------------------------------ HACKER RANK SQL -------------------------------------------------------------------------------
 
-1. 
+1. SELECT * FROM CITY WHERE COUNTRYCODE = 'USA' AND POPULATION >  100000; 
 
 
+2. 
+
+SELECT NAME 
+FROM CITY
+WHERE POPULATION > 120000 AND COUNTRYCODE = 'USA';  
+
+
+3. 
+SELECT * 
+FROM CITY
+
+4. 
+SELECT * 
+FROM CITY
+WHERE ID = 1661
+
+5.
+SELECT * 
+FROM CITY 
+WHERE COUNTRYCODE = 'JPN'; 
+
+6. 
+SELECT CITY, STATE  
+FROM STATION; 
+
+7. 
+SELECT DISTINCT CITY 
+FROM STATION 
+WHERE ID % 2 = 0; 
+
+8. 
+SELECT COUNT(CITY) - count(DISTINCT CITY) AS diferencia
+FROM STATION
+
+
+
+9.  Weather Observation Station 5
+
+SELECT CITY, CHAR_LENGTH(CITY)
+FROM STATION 
+ORDER BY CHAR_LENGTH(CITY), CITY ASC  LIMIT 1; 
+
+SELECT CITY, CHAR_LENGTH(CITY)
+FROM STATION 
+ORDER BY CHAR_LENGTH(CITY) DESC, CITY ASC   LIMIT 1; 
 
